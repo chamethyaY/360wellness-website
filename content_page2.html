@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ultimate Guide to Fitness</title>
+    <link rel="stylesheet" href="./global.css">
+    <style>
+       
+
+        
+        #header {
+            background-color: rgba(0, 100, 0, 0.8); /* Dark green, semi-transparent */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+            margin: 15px;
+            background: rgba(255, 255, 255, 0.9); /* Light background for sections */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4CAF50; /* Green color for headers */
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        img {
+            width: 20%;
+            height: 20%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .benefits, .activities {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .benefit, .activity {
+            background: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 calc(30% - 20px);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .benefit:hover, .activity:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .benefit, .activity {
+                flex: 1 1 calc(45% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefit, .activity {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Additional styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            background: rgba(255, 255, 255, 0.6); /* Slightly transparent background for list items */
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+  
+
+        <header class="top_header">
+            <div class="header">
+                <a href="./homepage.html">
+                    <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+                </a>
+                <a href="./user_profile.html">
+                    <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+                </a>
+            </div>
+        </header>
+        
+ 
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+ 
+            </ul>
+        </nav>
+    </div>
+<h1 id="header">Your Ultimate Guide to Fitness</h1>
+<section >
+    <h2>Introduction</h2>
+    <img src="./images/fitness_introduction.jpeg" alt="fitness-intro">
+    <p>Fitness is essential for maintaining a healthy lifestyle. Regular physical activity has numerous benefits, including improved health, mood, and energy levels.</p>
+</section>
+
+<section>
+    <h2>Types of Fitness Activities</h2>
+    <img src="./images/fitness_activity.jpeg" alt="fitness-activity">
+    <div class="activities">
+        <div class="activity">
+            <h3>Cardiovascular Exercises</h3>
+            <p>Activities like running, cycling, and swimming that improve heart health and assist in weight loss.</p>
+        </div>
+        <div class="activity">
+            <h3>Strength Training</h3>
+            <p>Weight lifting and resistance training to build muscle and boost metabolism.</p>
+        </div>
+        <div class="activity">
+            <h3>Flexibility and Mobility</h3>
+            <p>Yoga and stretching exercises that enhance flexibility and prevent injuries.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Benefits of Regular Exercise</h2>
+    <img src="./images/fitness_excersise.webp"  alt="fitness-excersise">
+    <div class="benefits">
+        <div class="benefit">
+            <h3>Improved Health</h3>
+            <p>Regular exercise reduces the risk of chronic diseases and enhances overall health.</p>
+        </div>
+        <div class="benefit">
+            <h3>Mood Enhancement</h3>
+            <p>Physical activity releases endorphins, which help improve mood and reduce stress.</p>
+        </div>
+        <div class="benefit">
+            <h3>Increased Energy</h3>
+            <p>Staying active boosts energy levels and improves overall stamina.</p>
+        </div>
+    </div>
+    </section>
+
+    <section>
+        <h2>Creating a Fitness Routine</h2>
+        <img src="./images/fitness_routine.webp" alt="fitness-routine">
+        <p>Start by setting realistic goals. Develop a balanced workout plan that includes various types of exercises. Aim for at least 150 minutes of moderate-intensity exercise weekly.</p>
+        <p>Sample Weekly Workout Plan:</p>
+        <ul>
+            <li>Monday: Cardio (30 minutes)</li>
+            <li>Tuesday: Strength Training (Upper Body)</li>
+            <li>Wednesday: Yoga (30 minutes)</li>
+            <li>Thursday: Strength Training (Lower Body)</li>
+            <li>Friday: Cardio (30 minutes)</li>
+            <li>Saturday: Flexibility and Mobility</li>
+            <li>Sunday: Rest Day</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Diet Plan For Fiteness</h2>
+        <img src="./images/nutrition_and_fitness.jpeg" alt="Nutrition and Fitness">
+        <p>A balanced diet is crucial for achieving fitness goals. Focus on whole foods, lean proteins, and plenty of fruits and vegetables.</p>
+        <p>Sample Meal Plan:</p>
+        <ul>
+            <li>Breakfast: Oatmeal with fruits</li>
+            <li>Lunch: Grilled chicken salad</li>
+            <li>Dinner: Quinoa with steamed vegetables</li>
+            <li>Snacks: Nuts and yogurt</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Success Stories</h2>
+        <img src="./images/success_story.jpeg" alt="Success Stories">
+        <p>Read inspiring stories from individuals who transformed their fitness journey and achieved their goals.</p>
+    </section>
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST02.html#content">Page Editor: Thisini Rathnayake</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

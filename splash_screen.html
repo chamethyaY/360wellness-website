@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    
+    <style>
+        /*Splash Screen*/
+        .splash_screen {
+            background-image: url('./images/scplash_screen_newww.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh; 
+            width: 100vw; 
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            padding: 20px; 
+            transition: opacity 0.1s ease-in-out;
+            z-index: 1000;
+            opacity: 1;
+        }
+
+        .splash_screen h1 {
+            font-size: 50px; 
+            margin-bottom: 20px;
+            color: #414226;
+        }
+
+
+        .splash_screen pre {
+            font-size: 20px; 
+            margin-bottom: 20px; 
+            color:#35271D;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .members {
+            list-style-type: none; 
+            padding: 0; 
+            margin-bottom: 20px; 
+            color: #414226;
+            
+        }
+
+        .members li {
+            font-size: 1rem; 
+        }
+
+        .page_editor_btn {
+            margin-top: 20px; 
+            padding: 10px 40px;
+            font-size: 15px;
+            cursor: pointer;
+            color: #E7CCAE ;
+            background-color: #7a6554d8;
+            border-style: none;
+            border-radius: 20px;
+            
+        }
+        .page_editor_btn:hover {
+            background-color:#35271dd0 ;
+        }
+
+        .splash_screen img {
+            margin-top: 20px; 
+            max-width: 100px;
+            height: auto
+
+        }
+
+        .splash-screen, .volunteer_page {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+
+        .loader {
+            margin-top: 50px;
+            width: 50px;
+            aspect-ratio: 1;
+            background: linear-gradient(to top, #7a6554, #7a6554) no-repeat;
+            background-size: 100% 50%;
+            background-position: bottom;
+            background-color: #ccc;
+            -webkit-mask: 
+            radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left, 
+            radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right, 
+            linear-gradient(to bottom left, #000 42%, #0000 43%) bottom left, 
+            linear-gradient(to bottom right, #000 42%, #0000 43%) bottom right;
+            -webkit-mask-size: 50% 50%;
+            -webkit-mask-repeat: no-repeat;
+            animation: l19 2s infinite linear, pulse 1.5s infinite ease-in-out;
+            box-shadow: 0px 0px 20px rgba(90, 71, 55, 0.7); /* Soft glow effect */
+        }
+
+        /* Pulse Animation */   
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        /* Original Growth Animation */
+        @keyframes l19 {
+            90%, 100% { background-size: 100% 100%; }
+        }
+
+        .loading_text {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #35271D;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fade-in-out 2s infinite;
+            text-shadow: 0px 0px 8px rgba(100, 91, 84, 0.705);
+        }
+        @keyframes fade-in-out {
+            0%, 100% { opacity: 0; }  /* Start and end transparent */
+            50% { opacity: 1; }       /* Fully visible in the middle */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="splash_screen">
+        <h1 id="splash_head">360 wellness</h1>
+        <pre id="splash_dis">
+            Your guide to a healthier, happier life through knowledge, 
+            support and wellness resources
+        </pre>
+        <p>Group Members</p>
+        <ul class="members">
+            <li>Nethmi Athukorala</li>
+            <li>Vishmi Fernando</li>
+            <li>Chamethya Yasodie</li>
+            <li>Thisini Rathnayake</li>
+        </ul>
+        <button class="page_editor_btn" onclick="location.href='./pageEditor_ST01.html#splash_screen'">Page Editor</button>
+
+        <div class="loader"></div>
+        <div class="loading_text">Loading ● ● ●</div>
+    </div>
+
+    <script>
+        // Wait for 4 seconds, then fade out splash screen
+        setTimeout(function() {
+            // Fade out the splash screen
+            document.querySelector('.splash_screen').style.transition = "opacity 0.5s ease-out";
+            document.querySelector('.splash_screen').style.opacity = "0";
+
+            // After the fade-out, redirect to the volunteer page
+            setTimeout(function() {
+                // Ensure the splash screen is completely hidden
+                document.querySelector('.splash_screen').style.display = 'none';
+                // Redirect to the volunteer page
+                window.location.href = "./homepage.html"; // Ensure path is correct
+            }, 500); // Match the fade-out duration
+        }, 4000); // Show splash screen for 4 seconds
+    </script> 
+</body>
+</html>

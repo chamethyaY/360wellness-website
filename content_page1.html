@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content_page1</title>
+    <link rel="stylesheet" href="./content_page1.css">
+    <link rel="stylesheet" href="./global.css">
+    <style>
+            body {
+            box-sizing: border-box;
+            overflow-x: clip;
+            margin-left: 0;
+            }
+            html, body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden; /* Hides horizontal scrollbar */
+            }
+            .photo_slider {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            .slider_images {
+            display:flex;
+            width: calc(100vw * 3);
+            transition: transform 1s cubic-bezier(0.45, 0, 0.55, 1);
+            }
+            .slider_images img {
+            width: 100vw;
+            height: 400px;
+            object-fit: cover;
+            }
+
+            .heading {
+
+            align-items: center;
+            background-color: #144235;
+            color: white;
+            padding: 30px;
+            font-size: 30px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .des{
+            margin-top: -10px;
+            background-color:#c7c9a38c;
+            border-radius: 0 0 15px 15px ;
+            padding: 50px;
+            text-align: center;
+            color: #414226;
+            font-size: 20px;
+            font-weight: bold;
+            }
+            .nested_list{
+                list-style: none;
+                margin-top: -10px;
+            }
+
+            .contents {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping to a new row */
+            justify-content: center; /* Centers the cards */
+            gap: 20px; /* Adds spacing */
+            }
+
+            .content-sec {
+            width: 300px; /* Each card takes roughly 1/3 of the width */
+            background-color: whitesmoke;
+            color: #35271D;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            }
+
+            .content-sec:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
+            }
+
+            .content_des {
+            color: #35271D;
+            font-size: 18px;
+            }
+
+            .content1{
+            background: linear-gradient(to right,  #A1D6A0, #e9ffe8);
+            border-radius: 15px;
+            padding-bottom: 50px;
+            }
+            .content-sec img{
+            width: 200px;
+            height:auto;
+            position: relative;
+            align-items: center;
+            border-radius: 10px;
+            }
+            .hidden_content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0px;
+            text-align: left;
+            color: #35271D;
+           
+
+            }
+            .hidden_content li{
+            padding: 10px;
+         
+            }
+
+            .hidden_content.open {
+            max-height: 1000px;
+            padding: 10px;
+            }
+            .more_info {
+            background-color: #144235;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 20px;
+            border-style: none;
+            align-items: flex-end;
+            }
+            .more_info:hover {
+            border: 2px solid #144235;
+            background-color:#14423500 ;
+            color: #144235;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(87, 138, 67, 0.411);
+            }
+           
+            .quiz_container {
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.336);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            text-align: center;
+
+            }
+
+            .quiz_container h1 {
+            color: #144235;
+            font-weight: bold;
+            margin-top: 40px;
+            }
+            .quiz_container p{
+            color: #35271D;
+            font-weight: bold;
+            font-size: 20px;
+            }
+            #question-counter{
+            color: #464646;
+            font-size: 17px;
+            margin-bottom: -5px;
+            }
+            #answers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+            #answers button {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            /*background-color: #144235;*/
+            background: linear-gradient(to right, #1b5041, #448371) ;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            }
+
+            #answers button:hover {
+            background: linear-gradient(#448371,#528174b6) ;
+
+            }
+
+            .hidden {
+            display: none;
+            }
+            #back-to-top {
+                font-size: 30px; /* Keep only one font-size */
+                width: auto;
+                height: auto;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background-color: #144235;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: none; /* Initially hidden */
+                transition: opacity 0.3s ease-in-out;
+                box-shadow: 0px 4px 10px rgba(2, 2, 2, 0.397);
+                z-index: 9999;
+            }
+            #back-to-top:hover {
+            background-color:  #1e6450; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px)
+            }
+
+            #toc-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #144235;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            }
+            #toc-button :hover {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px)
+            }
+
+            #table-of-contents {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            left: 20px;
+            background:white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+            z-index: 5;
+            border-radius: 15px;
+            }
+
+            #table-of-contents a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: #35271D;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+
+            }
+
+            #table-of-contents a:hover {
+            color: #144235;
+            background-color: #C7C9A3;
+            border-radius: 5px;
+            }
+            #table-of-contents::backdrop {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 0.3s ease;
+            }
+    </style>
+</head>
+<body>
+    <header class="top_header">
+        <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+    </header>
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+ 
+            </ul>
+        </nav>
+    </div>
+    <div class="photo_slider">
+        <div class='slider_images'>
+            <img src="./images/1.png" alt="image 1">
+            <img src="./images/2.png" alt="image 2">
+            <img src="./images/3.png" alt="image 3">
+        </div>
+    </div>
+
+    <button title="Table of Content" id="toc-button" onclick="toggleTOC()">📖 Contents</button>
+    <div id="table-of-contents">
+        <a href="#section1">1. Staying Physically Active</a>
+        <a href="#section2">2. Eating Nutrient-Rich Foods</a>
+        <a href="#section3">3. Keeping the Brain Active</a>
+        <a href="#section4">4. Prioritizing Sleep and Rest</a>
+        <a href="#section5">5. Staying Socially Connected</a>
+        <a href="#section6">6. Regular Health Checkups</a>
+        <a href="#quiz">7. Take a Quiz</a>
+    </div>
+   
+
+
+
+    <div class="content1">
+        
+        <div class="heading">
+            <h2 id="content_head"> Healthy Aging: Tips for Seniors</h2>
+
+        </div>
+        <p class="des">As we age, maintaining good health becomes even more important. A combination of physical activity, proper nutrition, and mental stimulation can help seniors live healthier, happier lives. Below are some tips to help older adults maintain well-being and vitality as they age.</p>
+
+        <div class="contents">
+            <div class="content-sec" id="section1">
+                <h3>1. Staying Physically Active</h3>
+                <img src="./images/pexels-rdne-6539859.jpg" alt="elderly people execising">
+                <p class="content_des">
+                    Physical activity plays a vital role in healthy aging. Regular exercise helps maintain strength, flexibility, and balance, which reduces the risk of falls and injuries. It also helps with cardiovascular health and boosts energy levels.
+                </p>
+
+                <div class="hidden_content">
+                    <ul>
+                        <li class="content_header">Types of Exercise:</li>
+                            <li class="nested_list">
+                                <ul>
+                                    <li><b>Aerobic exercise:</b> Walking, cycling, swimming, or low-impact exercises help improve cardiovascular health and increase stamina.</li>
+                                    <li><b>Strength training:</b> Light weight lifting or resistance exercises help build muscle mass, which naturally declines with age.</li>
+                                    <li><b>Flexibility and balance exercises: </b> Yoga, Pilates, or tai chi help improve flexibility, balance, and prevent falls.</li>
+                                </ul>
+                            </li>
+                        <li><b>Aim for at least 150 minutes of moderate-intensity exercise per week,</b> along with strength training exercises twice a week.</li>
+                    </ul>
+                </div>
+                <button class="more_info">More Info</button>
+            </div>
+            
+            <div class="content-sec" id="section2">
+                <h3>2. Eating Nutrient-Rich Foods</h3>
+                <img src="./images/healthy_foods2.jpg" alt="healthy foods">
+                <p class="content_des">
+                    A balanced and nutrient-rich diet is essential for maintaining good health in later years. Proper nutrition can help manage chronic conditions, strengthen the immune system, and keep the body functioning optimally.       
+                </p>
+                <div class="hidden_content">
+                    <ul>
+                        <li class="content_header">Focus on nutrient-dense foods:</li>
+                            <li class="nested_list">
+                                <ul>
+                                    <li><b>Fruits and vegetables: </b>  Aim for a variety of colors on your plate. These are rich in vitamins, minerals, and antioxidants.</li>
+                                    <li><b>Whole grains:</b> Brown rice, quinoa, oats, and whole-wheat bread provide fiber, which is essential for digestive health.</li>
+                                    <li><b>Lean proteins:</b> Include sources like fish, chicken, beans, and legumes to maintain muscle mass.</li>
+                                    <li><b>Healthy fats: </b> Avocados, olive oil, nuts, and seeds provide omega-3 fatty acids, which are good for heart health.</li>
+                            
+                                </ul>
+                            </li>
+                        <li><b>Hydration:</b> Drinking enough water is essential for overall well-being, as dehydration can lead to fatigue and other complications.</li>
+                        <li><b>Portion control:</b> As metabolism slows down with age, it's important to monitor portion sizes to maintain a healthy weight.
+                        </li>
+                
+                    </ul>
+                </div>
+                <button class="more_info">More Info</button>
+
+
+            </div>
+
+            <div class="content-sec" id="section3">
+                <h3>3. Keeping the Brain Active</h3>
+                <img src="./images/cognitive.jpg" alt="elderly people execising">
+                <p class="content_des">
+                    Mental stimulation is just as important as physical activity when it comes to healthy aging. Engaging in cognitive exercises can help keep the brain sharp and may reduce the risk of dementia and cognitive decline.       
+                </p>
+                <div class="hidden_content">
+                    <ul>
+                        <li class="content_header">Focus on nutrient-dense foods:</li>
+                            <li class="nested_list">
+                                <ul>
+                                    <li><b>Reading:</b>   Regular reading of books, magazines, or newspapers keeps the mind engaged.</li>
+                                    <li><b>Puzzles and games:</b> Crossword puzzles, Sudoku, and strategy games help keep the brain active.</li>
+                                    <li><b>Learning new skills:</b> Include sources like fish, chicken, beans, and legumes to maintain muscle mass.</li>
+                                    <li><b>Healthy fats: </b> Avocados, olive oil, nuts, and seeds provide omega-3 fatty acids, which are good for heart health.</li>
+                            
+                                </ul>
+                            </li>
+                        <li><b>Hydration:</b> Drinking enough water is essential for overall well-being, as dehydration can lead to fatigue and other complications.</li>
+                        <li><b>Portion control:</b> As metabolism slows down with age, it's important to monitor portion sizes to maintain a healthy weight.
+                        </li>
+                
+                    </ul>
+                </div>
+                <button class="more_info">More Info</button>
+
+
+
+            </div>
+            
+            <div class="content-sec" id="section4">
+                <h3>4. Prioritizing Sleep and Rest</h3>
+                <img src="./images/pexels-i-smail-altin-1722033-30877265.jpg" alt="elderly people execising">
+                <p class="content_des">
+                    Quality sleep is essential for overall well-being. As people age, sleep patterns may change, making it important to develop healthy sleep habits. Proper rest improves memory, concentration, and immune function.            
+                </p>
+                <div class="hidden_content">
+                    <ul>
+                        <li class="content_header">Tips for Better Sleep:</li>
+                            <li class="nested_list">
+                                <ul>
+                                    <li><b>Maintain a sleep schedule:</b> Going to bed and waking up at the same time every day helps regulate the body clock.</li>
+                                    <li><b>Create a relaxing bedtime routine:</b> Avoid screens before bed and engage in calming activities like reading or meditation.</li>
+                                    <li><b>Optimize the sleep environment:</b> Keep the bedroom dark, quiet, and at a comfortable temperature.</li>
+                            
+                                </ul>
+                            </li>
+                    </ul>
+                </div>
+                <button class="more_info">More Info</button>
+            </div>
+
+            <div class="content-sec" id="section5">
+                <h3>5. Staying Socially Connected</h3>
+                <img src="./images/socially_connected.jpg" alt="elderly people execising">
+                <p class="content_des">
+                    Social interaction plays a crucial role in mental and emotional health. Engaging with family, friends, and community members helps reduce stress, anxiety, and depression.            </p>
+                <div class="hidden_content">
+                    <ul>
+                        <li class="content_header">Ways to Stay Socially Active:</li>
+                            <li class="nested_list">
+                                <ul>
+                                    <li><b>Join community groups:</b> Participating in clubs, senior centers, or volunteer programs fosters a sense of belonging.</li>
+                                    <li><b>Stay in touch with loved ones:</b> Regular communication through phone calls, video chats, or in-person visits helps maintain strong relationships.</li>
+                                    <li><b>Engage in hobbies:</b> Activities such as gardening, painting, or playing a musical instrument provide both enjoyment and a sense of purpose. </li>
+                                    <li><b>Address sleep disturbances: </b> If experiencing insomnia or frequent waking, consult a doctor for possible solutions.</li>
+                            
+                                </ul>
+                            </li>
+                    </ul>
+                </div>
+                <button class="more_info">More Info</button>
+            </div>
+
+            <div class="content-sec" id="section6">
+                <h3>6. Regular Health Checkups</h3>
+                <img src="./images/health_checkup.jpg" alt="elderly people execising">
+                <p class="content_des">
+                    Routine medical checkups are important for preventing and managing health conditions. Early detection of issues can lead to more effective treatment and a better quality of life. 
+                </p>
+                <div class="hidden_content">
+                    <ul>
+                        <li class="content_header">Health Checkup Essentials:</li>
+                            <li class="nested_list">
+                                <ul>
+                                    <li><b>Routine screenings:</b> Regular tests for blood pressure, cholesterol, diabetes, and other conditions help with early diagnosis.</li>
+                                    <li><b>Vaccinations:</b> Annual flu shots, pneumonia vaccines, and other recommended immunizations help prevent serious illnesses.</li>
+                                    <li><b>Medication management:</b> Following prescribed medication plans and consulting a healthcare provider about any side effects or concerns ensures proper treatment.</li>                       
+                                </ul>
+                            </li>
+                    </ul>
+                </div>
+                <button class="more_info">More Info</button>
+            </div>
+            
+        </div>
+        
+        <!--Quiz -->
+        <div class="quiz_container" >
+            <h1>Senior Wellness Quiz</h1>
+            <div id="quiz">
+                <p id="question-counter">Question 1 / 3</p>
+                <p id="question">
+                    Loading Question...</p>
+                
+                <div id="answers"></div>
+                </div>
+              
+                <p id="score" style="display: none;">Your Score: <span id="score-value"></span></p>
+                <p id="message" style="display: none;"></p>
+            </div>
+            
+            </div>
+        
+    
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST01.html#content">Page Editor: Nethmi Athukorala</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+    </footer>
+    <button title= "Go to Top" id="back-to-top" onclick="scrollToTop()">  &#x2B06;</button>
+
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({top:0, behavior:"smooth"});
+
+        }
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const button = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+
+
+        let currentIndex = 0;
+        let direction = 1;
+        const images = document.querySelector(".slider_images");
+        const allImages = document.querySelectorAll(".slider_images img").length;
+
+        function nextSlide() {
+            currentIndex += direction;
+            if (currentIndex >= allImages -1) {
+                direction = -1; // direction to right
+            } else if (currentIndex <=0) {
+                direction = 1; // direction to left
+            }
+            images.style.transform = `translateX(-${currentIndex * 100}vw)`; //move the images inside a slider
+        }
+        setInterval(nextSlide, 3000); // changes image every 3 seconds
+         // Add this script to replace your current event listener code
+         document.addEventListener("DOMContentLoaded", function() {
+            // Assign unique IDs to each hidden content section
+            const hiddenSections = document.querySelectorAll(".hidden_content");
+            hiddenSections.forEach((section, index) => {
+                section.id = "hidden-content-" + index;
+            });
+            
+            // Add event listeners with specific targeting
+            document.querySelectorAll(".more_info").forEach((button, index) => {
+                button.addEventListener("click", function() {
+                    // Target the specific hidden content by ID
+                    const targetContent = document.getElementById("hidden-content-" + index);
+                    
+                    if (targetContent.classList.contains("open")) {
+                        targetContent.classList.remove("open");
+                        this.innerText = "More Info";
+                    } else {
+                        targetContent.classList.add("open");
+                        this.innerText = "Less Info";
+                    }
+                });
+            });
+        });
+        const questions = [
+            {
+                question: "How many glasses of water do you drink daily?",
+                answers: ["4", "6", "8", "10"],
+                correct: 2
+            },
+            {
+                question: "what kind of exercises do you do to maintain your balance?",
+                answers: ["Yoga", "Swimming", "Cycling", "Running"],
+                correct: 0
+            },
+            {
+                question: "How many hours of sleep do you get daily?",
+                answers: ["5", "6-9", "10+", "less than 5"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questionCounter = document.getElementById("question-counter");
+        const questionElement = document.getElementById("question");
+        const answersContainer = document.getElementById("answers");
+        const nextButton = document.getElementById("next-btn");
+        const scoreDisplay = document.getElementById("score");
+        const scoreValue = document.getElementById("score-value");
+        const messageDisplay = document.getElementById("message");
+
+        function showQuestion() {
+            let question = questions[currentQuestionIndex];
+            questionElement.textContent = question.question;
+
+            questionCounter.textContent = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+
+            // clear previous answers
+            answersContainer.innerHTML = "";
+            question.answers.forEach((answer,index)=>{
+                let button = document.createElement("button");
+                button.textContent = answer;
+                button.onclick = () => checkAnswer(index);
+                answersContainer.appendChild(button);
+            })
+        }
+
+        function checkAnswer(index) {
+            if (index===questions[currentQuestionIndex].correct) {
+                score++;
+                
+            }
+            currentQuestionIndex++;
+
+            if(currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else{
+                showResults();
+            }
+        }
+
+        function showResults() {
+            questionElement.textContent = "Quiz Completed!";
+            answersContainer.innerHTML  = "";
+            
+            scoreDisplay.style.display = "block"
+            scoreValue.textContent = `${score} / ${questions.length}`;
+
+            if (score === questions.length) {
+                messageDisplay.textContent = "⭐ Excellent! You're making great health choices";
+            } else if (score>= questions.length/2) {
+                messageDisplay.textContent = "😀 Good effort! Keep improving your habits";
+            } else {
+                messageDisplay.textContent = "♥️ Prioritize yourself first! Stay healthy, stay happy! "
+            }
+            messageDisplay.style.display = "block";  
+
+        }
+        showQuestion();
+
+        function toggleTOC() {
+        const toc = document.getElementById('table-of-contents');
+        toc.style.display = toc.style.display === 'block' ? 'none' : 'block';
+    }
+    
+
+            
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+
+* {
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+.top_header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    margin-top: -10px;
+    width: 250px;
+    height: 145.48px;
+}
+
+.profile_icon {
+    width: 50px; 
+    height: 50px; 
+    margin-top: -35px;
+
+}
+
+body {
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+}
+
+.navbar{
+    margin-top: -50px;
+    width: 100%;
+    height: 50px;
+    background-color: #144235;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Ensures even spacing */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li {
+    display: flex;
+
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-toggle {
+    display: block;
+    text-decoration: none;
+    color: white;
+    
+    text-align: center;
+    background-color: #144235;  
+    border-radius: 5px;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; 
+    background-color: #144235;
+    list-style: none;
+
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-menu li {
+    width: 100%;
+    text-align: left;
+    display: block;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #144235;
+    width: 100%;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #007F5B;
+}
+
+footer {
+    text-align: center;
+    background-color: #144235;
+    color: white;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+
+  
+}
+footer img {
+    align-items: flex-start;
+    width:200px;
+    display: block;
+}
+.Editor {
+    text-decoration: none;
+    color: white;
+    align-items: flex-end;
+    right: 20px; 
+    bottom: 10px;
+}
+.Editor a {
+    font-weight: bold;
+    
+    color: white;
+    text-decoration: none;
+}
+.Editor a:hover {
+    text-decoration: underline;
+    
+}

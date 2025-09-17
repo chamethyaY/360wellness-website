@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student4 - Vishmi Fernando</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+
+    <header class="top_header">
+        <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+    </header>
+    
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+        
+   
+
+    <section class="stud">
+        <h2>Vishmi Fernando, student 04</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+
+            <section>
+                <h2 id="user-profile">User Profile Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li><h3>HTML Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                       
+                            <li><b>Semantic Tags:</b> Proper use of (&lt;header&gt;, &lt;section&gt;, &lt;div&gt;, &lt;footer&gt;) for better structure.</li>
+                            <li><b>Flexbox Layout:</b> Used flexbox for a responsive and adaptable page layout.</li>
+                            <li><b>Grid Layout for Calendar:</b> Implemented grid-template-columns: repeat(7, 1fr) to structure the calendar.</li>
+                            <li><b>Navigation Bar:</b> &lt;nav&gt; with dropdown menus for structured and accessible navigation.</li>
+                            <li><b>Images and Illustrations:</b> &lt;img&gt; tags for logos, user profile pictures, and event icons with descriptive alt attributes.</li>
+                        </ul>
+
+                        <li><h3>CSS Techniques Used:</h3></li>
+                        <ul class="inner_points">
+                            <li><b>Responsive Design:</b> Flexbox and grid layouts adjust the content layout across different screen sizes.</li>
+                            <li><b>Calendar Styling:</b> Grid layout for organizing days of the week , Color-coded dates for marking today's date and scheduled events , Hover effects on calendar days for better interaction.</li>
+                            <li><b>Progress Bars for Skills:</b> .skill_bar and .skill_progress classes define structured skill bars , Smooth animations using transition: width 0.5s; for gradual loading , Tooltips on hover (.skill_tooltip) provide detailed information on skill levels.</li>
+                            <li><b>Dropdown Menus:</b> Styled dropdown navigation with hover effects for better user experience.</li>
+                        </ul>
+
+
+                        <li><h3>JavaScript Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                            <li><b>Dynamic Calendar:</b> Utilized Date() object to generate calendar days dynamically , Event markers using the ::after pseudo-element to highlight scheduled events.
+                            </li>
+                            <li><b>Interactive Progress Bars:</b> Dynamically sets width of .skill_progress bars based on predefined skill levels , Tooltip displays on hover for detailed skill descriptions.
+                            </li>
+                           
+                        </ul>
+
+                    </ul>
+                    
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Semantic HTML</strong>: The use of proper &lt;header&gt;, &lt;section&gt;, &lt;nav&gt;, &lt;footer&gt tags improves screen reader navigation.</li>
+                        <li><strong>Color Contrast</strong>: The background and text colors are chosen to enhance readability.</li>
+                        <li><strong>Alternative Text for Images</strong>: Any images used should have alt attributes to describe their content.</li>
+                        <li>Hover Effects: Used for interactive elements such as dropdowns, buttons, and tooltips to enhance usability.</li>
+                    </ul>  
+                    <h3>Link to the validation page</h3>
+                        <p><a href="./validation_ST04.html#userProfileVal">link to the validation page</a></p> 
+
+                    <h3>Link to the page</h3>
+                        <p><a href="./user_profile.html">link to the User profile page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="sitemap">Sitemap Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li><h3>HTML Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+
+                            <li><b>Semantic Structure:</b> Utilized &lt;header&gt;, &lt;nav&gt;, &lt;svg&gt;, &lt;footer&gt; for proper page organization.
+                            </li>
+                            <li><b>Navigation Bar:</b> Implemented &lt;nav&gt; with an unordered list &lt;ul&gt; for structured and accessible navigation.
+                            </li>
+                            <li><b>SVG-based Sitemap:</b> Used an &lt;svg&gt; element with &lt;rect&gt; and &lt;line&gt; elements to create a visual sitemap structure.</li>
+                            <li><b>Hyperlinks with Interactive Nodes:</b> &lt;a&gt; elements wrap &lt;rect&gt; nodes to provide clickable navigation to different sections.</li>
+                           
+                        </ul>
+
+                        <li><h3>CSS Techniques Used:</h3></li>
+                        <ul class="inner_points">
+                            <li><b>Responsive Design:</b> Ensured adaptability across screen sizes, adjusting height for mobile screens using @media queries.</li>
+                            <li><b>Sitemap Styling:</b> .node class for sitemap elements, with smooth hover and transition effects,
+                             connection class for structured sitemap links using stroke-width: 2px , Focus effects for improved
+                             accessibility using box-shadow for focusable elements , Focus effects for improved accessibility using box-shadow for
+                             focusable elements.
+                            </li>
+                            <li><b>Navigation Styling:</b> Dropdown navigation with .dropdown and .dropdown-menu , Hover and active effects for a better user experience.</li>
+                            <li><b>Footer Design:</b> Styled with a background color, centered text, and an embedded logo.
+                            </li>
+                        </ul>
+                        <li><h3>Key Tags & Properties Justification:</h3></li>
+                        <ul class="inner_points" >
+                            <li><b>.node:hover:</b> Enhanced interactivity and user engagement.</li>
+                            <li><b>.sitemap-svg:</b> Maintained scalability across screen sizes.</li>
+                            <li><b>.nav:</b> Improved navigation usability with consistent padding and color.</li>
+                        </ul>
+
+                    </ul>
+
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Keyboard Navigation:</strong> Focusable nodes (tabindex="0") allow keyboard users to navigate through the sitemap.</li>
+                        <li><strong>Contrast:</strong> Dark green background with white text for improved readability.
+                        </li>
+                        <li><strong>Text for Images:</strong>&lt;img&gt; elements include descriptive alt attributes for visually impaired users.
+                        </li>
+                    </ul>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="./validation_ST04.html#sitemapVal">link to the validation page</a></p> 
+                       
+                    <h3>Link to the page</h3>
+                        <p><a href="./sitemap.html">link to the sitemap page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li><h3>HTML Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                        
+                            <li><b>Semantic tags:</b> (&lt;header&gt;, &lt;section&gt;, &lt;main&gt;) for better structure.</li>
+                            <li><b>Images and Media:</b> img tags used for visual engagement, with alt attributes for accessibility.</li>
+                            <li><b>Interactive Elements:</b> Links (a) for navigation and button for scroll-to-top functionality.</li>
+                                                            
+                        </ul>
+                        <li><h3>CSS Techniques Used:</h3></li>
+                        <ul class="inner_points">
+                            <li><b>Color Scheme:</b> Calming and earthy tones, including #C7C9A3 (background) and #6F7149 (accents), consistent with the wellness theme.</li>
+                            <li><b>Hover Effects:</b> Smooth transition effects (transform: translateY(-5px)) on cards for interactive user experience.</li>
+                            <li><b>Responsive Design:</b> Utilized CSS Grid (.quick-tips, .events-grid) for flexible layouts that adapt to different screen sizes.</li>
+                            <li>Use background-video for increase interactivity</li>
+                        </ul>
+                        <li><h3>JavaScript Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                            <li><b>Scroll-to-Top Button:</b> Implemented using window.scrollTo() with smooth scrolling behavior.</li>
+                            <li><b>Dynamic Button Visibility:</b> window.onscroll event listener toggles visibility of the scroll-to-top button.</li>
+                        </ul>
+                    </ul>
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Keyboard Navigation & Focus Management</strong>: The "Scroll to Top" button includes aria-label="Scroll to top" for screen readers.
+                            The .top-btn:hover, .top-btn:focus styles improve visibility for keyboard users.
+                            The tabindex="0" on interactive elements ensures they can be accessed using the Tab key.</li>
+                        <li><strong>Color Contrast & Readability</strong>: Text colors contrast well with the dark background to enhance readability.
+                            Text shadows and backgrounds are used to improve clarity against the background video.</li>
+                        <li><strong>Alternative Text for Images</strong>: All images include meaningful alt attributes to describe their content.</li>
+                        <li>Video Accessibility: The background video is muted by default and does not contain critical content, avoiding distractions for screen readers.
+                            A dark overlay improves text readability over the video.</li>
+                        <li></strong>ARIA Labels for Interactive Elements</strong>: Navigation buttons and external links use aria-labels to describe their purpose.</li>
+                        <li><strong>Mobile Responsiveness</strong>: The site adjusts dynamically for smaller screens using CSS media queries.
+                            </li>    
+                    </ul>
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="./validation_ST04.html#contentVal">link to the validation page</a>
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="./content_page4.html">link to the Content04 page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <ul class="points">
+                    <li><h3>Challenges Encountered:</h3></li>
+                    <ul class="inner_points" >
+                    
+                        <li><strong>Contrast Issues with Background Video</strong> – The video background made text hard to read, requiring a dark overlay and text shadows.</li>
+                        <li><strong>Keyboard Navigation Limitations</strong> – Some elements, like the scroll-to-top button, were not initially accessible using the Tab key.</li>
+                        <li><strong>Screen Reader Accessibility</strong> – Some image alt text and interactive elements lacked proper ARIA labels, affecting usability.
+                        </li>
+                        <li><strong>Mobile Responsiveness</strong> – Certain elements did not scale well on smaller screens, requiring grid adjustments.
+                        </li>
+                        <li><strong>Clickable Elements in SVG Sitemap</strong> – SVG nodes were not keyboard-friendly, requiring tabindex="0" and <a> wrapping.
+                        </li>
+                        <li><strong>Ensuring Proper Focus States</strong> – Some interactive elements needed focus indicators to improve visibility for keyboard users.
+                        </li>
+                                                        
+                    </ul>
+                    <li><h3>Lessons Learned:</h3></li>
+                    <ul class="inner_points">
+                        <li><strong>Text Readability Must Be Prioritized</strong> – Dark overlays, shadows, and high contrast colors improve clarity.
+                        </li>
+                        <li><strong>Keyboard Navigation is Essential</strong> – Adding focusable elements and tabindex="0" enhances usability.
+                        </li>
+                        <li><strong>Screen Readers Need Clear Labels</strong> – Using ARIA attributes ensures better accessibility.
+                        </li>
+                        <li><strong>Mobile Optimization is Crucial</strong> – CSS grid and media queries help maintain a responsive layout.
+                        </li>
+                        <li><strong>SVGs Require Extra Accessibility Work</strong> – Making SVG nodes clickable and focusable improves interaction.
+                        </li>
+                        <li><strong> Accessibility Testing Prevents Issues</strong> – Testing with screen readers and keyboard navigation saves time later.
+                        </li>
+                    </ul>
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                <ul class="points">
+                    <li><h3>Accessibility Compliance</h3></li>
+                    <ul class="inner_points" >
+                    
+                        <li>The pages follow WCAG (Web Content Accessibility Guidelines) by including proper alt attributes for images, ensuring visually
+                             impaired users can access content through screen readers.</li>
+                        <li>HTML is structured correctly, using semantic tags such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, and &lt;footer&gt; to improve readability and assistive technology support.</li>
+                        <li>Contrast and font sizes are optimized for readability, making the site more inclusive.</li>
+                                                        
+                    </ul>
+                    <li><h3>Security Compliance</h3></li>
+                    <ul class="inner_points">
+                        <li>No inline JavaScript that could lead to security vulnerabilities.</li>
+                        <li>External links are reviewed to ensure they point to safe and relevant sources.</li>
+                    </ul>
+                    <li><h3>Content Appropriateness and Ethical Use</h3></li>
+                    <ul class="inner_points" >
+                        <li>The site contains nformative content, aligning with Janet’s guidelines on appropriate material.</li>
+                        <li>No offensive, misleading, or unauthorized material is published, ensuring compliance with acceptable use policies.</li>
+                    </ul>
+
+                    <li><h3>Technical Standards Compliance</h3></li>
+                    <ul class="inner_points">
+                        <li>The pages are validated using W3C HTML and CSS validators, ensuring clean and error-free code.</li>
+                        <li>The site is optimized for cross-browser compatibility, ensuring proper rendering on different devices and browsers.</li>
+                    </ul>
+                </ul>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+
+                    <ul class="ref">
+                        <li>W3Schools.com (2025). <a href="https://www.w3schools.com/"> https://www.w3schools.com/.</a></li>
+                        <li>MDN Web Docs (2025). <a href=" https://developer.mozilla.org/en-US/"> https://developer.mozilla.org/en-US/.</a></li>
+                        <li>W3Schools.com (2025). <a href="https://www.w3schools.com/"> https://www.w3schools.com/.</a></li>
+                        <li>The W3C Markup Validation service (2025). <a href="https://validator.w3.org/"> https://validator.w3.org/.</a></li>
+                        <li>FreeCodeCamp.org (2025). <a href="https://www.freecodecamp.org/"> https://www.freecodecamp.org/.</a></li>
+                        <li>Codecademy (2025) Learn to code - for free | Codecademy. <a href="https://www.codecademy.com/.">https://www.codecademy.com/.</a></li>
+                        <li>Khan Academy (2025)<a href=" https://www.khanacademy.org/."> https://www.khanacademy.org/.</a></li>
+                        <li>National Institute of Mental Health (NIMH) - Transforming the understanding and treatment of mental illnesses (2025)<a href="https://www.nimh.nih.gov/.">https://www.nimh.nih.gov/.</a></li>
+                        <li> Betheme - The Biggest WordPress & WooCommerce Theme with 700+ pre-built websites (2025).<a href="https://muffingroup.com/betheme/">https://muffingroup.com/betheme/</a></li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                    <ul> 
+                        <li><a href="./pageEditor_ST01.html#splash">Splash page</a></li>
+                        <li><a href="./pageEditor_ST01.html#volunteer">Volunteer page</a></li>
+                        <li><a href="./pageEditor_ST01.html#content">Content page</a></li>
+                    </ul>
+                <li>Student 2</li>
+                    <ul>
+                        <li><a href="./pageEditor_ST02.html#home_page">Home page </a></li>
+                        <li><a href="./pageEditor_ST02.html#table">Table page</a></li>
+                        <li><a href="./pageEditor_ST02.html#content">Content page</a></li>
+                    </ul>
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="./pageEditor_ST03.html#feedback">Feedback page</a> </li>
+                        <li><a href="./pageEditor_ST03.html#team">Team page</a></li>
+                        <li><a href="./pageEditor_ST03.html#content">Content page</a></li>
+                    </ul>
+                <li>Student 4</li>
+                    <ul>
+                        <li><a href="./pageEditor_ST04.html#user-profile">Profile page </a></li>
+                        <li><a href="./pageEditor_ST04.html#sitemap">Sitemap page</a></li>
+                        <li><a href="./pageEditor_ST04.html#content">Content page</a></li>
+                    </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST04.html">Page Editor: Vishmi Fernando</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>   
+     </footer>
+</body>
+</html>

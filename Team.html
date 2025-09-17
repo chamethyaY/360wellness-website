@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <link rel="stylesheet" href="./global.css">
+
+    <style>
+        
+body {
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  
+    
+}
+#heading{
+  font-size: 44px;
+  text-align: center;
+}
+#teampage_intro{
+    text-align: center;
+
+}
+h2{
+  font-size: 27px;
+}
+.info p{
+  font-size:20px;
+}
+
+.team-section {
+    
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, #007F5B, #C0C0C0, #FFFFFF, #B2BEB5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/*background: linear-gradient(to bottom, #007F5B, #C5C7C3, #F5F5F5);*/
+.team_content{
+    background: linear-gradient(to bottom, #007F5B, #C5C7C3, #F5F5F5);
+    margin-top: -40px;
+}
+.team-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+.team-member li{
+  text-align:left ;
+}
+.team-member {
+    position: relative;
+    width: 280px;
+    padding: 20px;
+    background: #C5C7C3; 
+    border-radius: 10px;
+    text-align:center;
+    
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.team-member h3, p {
+  text-align: center;
+  font-size:24px;
+}
+
+.team-member img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+    filter: brightness(85%) saturate(90%);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
+    
+}
+.hidden-details {
+    display: none;
+    font-size: 15px;
+    color: #422E26;
+}
+.hidden-details li{
+  font-size:18px;
+}
+
+.team-member:hover .hidden-details {
+    display: block;
+}
+/* Scroll to top button styles */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #5CB85C;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.top-button:hover {
+  background-color: #007F5B;
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    #navbar ul {
+        flex-direction: column;
+    }
+    .top_header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member {
+        width: 90%;
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+
+
+    <header>
+
+        <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+        
+    </header>
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+            <li><a href="./volunteer_page.html"> Join Us</a></li>
+            <li><a href="./table.html">Projects</a></li>
+            <li><a href="./feedback.html">Feedback</a></li>
+            <li><a href="./sitemap.html">Site Map</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="./Team.html">Our Team</a></li>
+                    <li><a href="./content.html">Contents</a></li>
+                    <li><a href="./validation_ST01.html">Validation Page</a></li>
+                </ul>
+            </li>
+    
+            </ul>
+        </nav>
+    </div>
+    
+    
+    <div class="team_content">
+
+        <div class="team-section">
+            <h1 id ="heading">Our Team</h1>
+            <h2 id ="teampage_intro">Meet the brilliant minds behind 360 wellness. Hover over each image to learn more about our roles!</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="./images/nethmi.jpeg" alt="Nethmi">
+                    <div class="info">
+                        <h3>Nethmi</h3>
+                        <p >Student Role:1</p>
+                        <ul class="hidden-details">    
+                            <li>volunteer page</li>
+                            <li>Splash Screen</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="./images/thisini.jpeg" alt="Thisini">
+                    <div class="info">
+                        <h3>Thisini</h3>
+                        <p>Student Role: 2</p>
+                        <ul class="hidden-details">  
+                          <li>Home page</li>
+                          <li>Nav Bar</li>
+                          <li>Template</li>
+                          <li>Table</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="./images/chamethya.jpeg" alt="Chamethya">
+                    <div class="info">
+                        <h3>Chamethya</h3>
+                        <p>Student Role: 3</p>
+                        <ul class="hidden-details">
+                            <li>Feedback Form</li>
+                            <li>Team  Page</li>
+                        </ul>    
+                        
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="./images/vishmi.jpeg" alt="Vishni">
+                    <div class="info">
+                        <h3>Vishmi</h3>
+                        <p>Student Role: 4</p>
+                        <ul class="hidden-details">  
+                            <li>Site Map</li>
+                            <li>User Profile</li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+    <a href="#top" class="top-button">&#8593;</a>
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST03.html#team">Page Editor: Chamethya Yasodie</a>
+            </div>
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+      </footer>  
+      </body>
+      </html>
+
+

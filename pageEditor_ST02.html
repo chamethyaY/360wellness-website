@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student 02 - Thisini Rathnayake</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+    
+    <header class="top_header">
+        <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+    </header>
+        
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="stud">
+        <h2>Thisini Rathnayake, student 02</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <section>
+                <h2 id="home_page">Home Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li><h3>HTML Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                        
+                            <li>Overall- Semantic tags (&lt;header&gt;, &lt;section&gt;, &lt;div&gt;, &lt;footer&gt;) for better structure.</li>
+                            <li>Dropdown Navigation: Implemented a dropdown menu inside &lt;li class="dropdown"&gt;.</li>
+                            <li>Image & Logo Integration: img elements used for branding and content.</li>
+                            <li>Responsive Design: meta name="viewport" content="width=device-width, initial-scale=1.0".
+                            </li>
+                            
+                        </ul>
+                        <li><h3>CSS Techniques Used:</h3></li>
+                        <ul class="inner_points">
+                            <li>Flexbox Layout: Used display: flex; for navigation and header alignment.
+                            </li>
+                            <li>Dropdown Menu Styling: Applied position: absolute; and box-shadow for better visibility.
+                            </li>
+                            <li>Overlay Effect: .overlay { background: rgba(0, 0, 0, 0.5); } for a semi-transparent hero section.
+                            </li>
+                            <li>Hover Effects: nav ul li a:hover { text-decoration: underline; }.
+                            </li>
+                            <li>Border Radius for Circular Elements: Applied border-radius: 50%; for volunteer section elements.
+                            </li>
+
+                        </ul>
+                        <li><h3>JavaScript Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                            <li>document.querySelector('.dropdown').addEventListener('click', function() {...})
+                            </li>
+                            <li>window.addEventListener('scroll', function() {...}).
+                            </li>
+                            <li>document.getElementById('form').onsubmit = function() {...}</li>
+                        </ul>
+                    </ul>
+                    
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Semantic HTML</strong>: The use of proper &lt;header&gt;, &lt;section&gt;, &lt;nav&gt;, &lt;footer&gt tags improves screen reader navigation.</li>
+                        <li><strong>Color Contrast</strong>: The background and text colors are chosen to enhance readability.</li>
+                        <li><strong>Alternative Text for Images</strong>: Any images used should have alt attributes to describe their content.</li>
+                    </ul>
+                    
+                    <h3>Link to the validation page</h3>
+                        <p><a href="./validation_ST02.html#homepage">link to the validation page</a></p> 
+
+                    <h3>Link to the page</h3>
+                        <p><a href="./homepage.html">link to the home page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="table">Project Table Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li><h3>HTML Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                            <li>Table Structure: Used table, thead, body to display structured health initiative data.
+                            </li>
+                            <li>Navigation Bar: Implemented a nav element with an unordered list ul for site navigation.
+                            </li>
+                            <li>Dropdown Menu: Used li class="dropdown" to create a multi-level menu with ul class="dropdown-menu".
+                            </li>
+                            <li>Hyperlinks for Details: Each row has a "Read More" link using a class="read-more" href="#".
+                            </li>
+                            <li>Header & Footer: Used header for branding and footer for copyright and editor details.
+                            </li>
+                        
+                        </ul>
+                        <li><h3>CSS Techniques Used:</h3></li>
+                        <ul class="inner_points">
+                            <li>background-color: #007F5B; → Dark green for the table.
+                            </li>
+                            <li>tr:nth-child(even) { background-color: #6b6e4e; } → Alternating row colors for readability.
+                            </li>
+                            <li>tr:hover { background-color: #7b7e5e; } → Hover effect on rows.
+                            </li>
+
+                        </ul>
+                        
+                    </ul>
+
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>ARIA Labeling & Semantic Structure</strong>: The  &lt;svg&gt; element includes aria-label="Website Sitemap" to define its purpose for screen readers.
+                            &lt;title&gt;, tags inside &lt;rect&gt; elements provide descriptive names for each section.</li>
+                        <li><strong>Keyboard Navigation & Focus Managemen</strong>: tabindex="0" makes each node focusable using the Tab key.
+                            Hover and focus styles ensure visual feedback for keyboard users</li>
+                        <li><strong>Screen Reader Compatibility</strong>: Each clickable node is wrapped inside &lt;a&gt; elements, ensuring it can be navigated via keyboard and read properly by screen readers.</li>
+                    </ul>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="./validation_ST02.html#Table">link to the validation page</a></p> 
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="./table.html">link to the table.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li><h3>HTML Techniques Used:</h3></li>
+                        <ul class="inner_points" >
+                        
+                            <li>Semantic tags (&lt;header&gt;, &lt;section&gt;, &lt;main&gt;) for better structure.</li>
+                            <li>Image Integration: img src="fitness introduction.jpeg" to visually enhance content.
+                            </li>
+                            <li>Responsive Lists: Used <ul> and <li> for structured meal and workout plans.
+                            </li> 
+                            <li>Success Stories Section: Encourages engagement with <section><h2>Success Stories</h2>.
+                            </li>   
+                                                            
+                        </ul>
+                        <li><h3>CSS Techniques Used:</h3></li>
+                        <ul class="inner_points">
+                            <li>Provides a modern green-to-silver color effect.
+                            </li>
+                            <li>Creates a smooth lift effect when hovering over fitness benefits and activities.
+                            </li>
+                            <li>Ensures sections adjust dynamically on different screen sizes.
+                            </li>
+                            <li>Adjusts layout based on screen width using @media queries.
+                                css
+                                Copy code
+                              </li>
+                        </ul>
+                        
+                    </ul>
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Color Contrast & Readability</strong>: Text colors contrast well with the dark background to enhance readability.
+                            Text shadows and backgrounds are used to improve clarity against the background video.</li>
+                        <li><strong>Alternative Text for Images</strong>: All images include meaningful alt attributes to describe their content.</li>
+                        <li></strong>ARIA Labels for Interactive Elements</strong>: Navigation buttons and external links use aria-labels to describe their purpose.</li>
+                        <li><strong>Mobile Responsiveness</strong>: The site adjusts dynamically for smaller screens using CSS media queries.
+                            </li>    
+                    </ul>
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="./validation_ST02.html#contentVal">link to the validation page</a>
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="./content_page2.html">link to the Content 02 page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <ul class="points">
+                    <li><h3>Challenges Encountered:</h3></li>
+                    <ul class="inner_points" >
+                    
+                        <li>Making sure the webpage looks good on different screen sizes was challenging. The layout sometimes broke on smaller screens, requiring adjustments with flexbox and media queries.
+                        </li>
+                        <li>The dropdown menu didn’t function properly at first. It required CSS positioning adjustments and JavaScript enhancements to ensure smooth visibility and interactivity.
+                        </li>
+                        <li>Creating a visually appealing and readable table was tricky. The background colors, alternating row styles, and hover effects had to be carefully chosen for contrast and accessibility.
+                        </li>
+                                                        
+                    </ul>
+                    <li><h3>Lessons Learned:</h3></li>
+                    <ul class="inner_points">
+                        <li>Using section, header, footer, and nav helped create a well-organized and readable webpage, making it easier for search engines and users.
+                        </li>
+                        <li>Instead of using floats or inline-block, flexbox and grid provided better control over page structure, making it more responsive and visually appealing.
+                        </li>
+                        <li>The website looked great on a desktop, but on mobile screens, some sections didn’t align properly. Regular testing and debugging helped optimize the user experience.
+                        </li>
+                    </ul>
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                <ul class="points">
+                    <li><h3>Accessibility Compliance</h3></li>
+                    <ul class="inner_points" >
+                    
+                        <li>The pages follow WCAG (Web Content Accessibility Guidelines) by including proper alt attributes for images, ensuring visually
+                             impaired users can access content through screen readers.</li>
+                        <li>HTML is structured correctly, using semantic tags such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, and &lt;footer&gt; to improve readability and assistive technology support.</li>
+                        <li>Contrast and font sizes are optimized for readability, making the site more inclusive.</li>
+                                                        
+                    </ul>
+                    <li><h3>Security Compliance</h3></li>
+                    <ul class="inner_points">
+                        <li>No inline JavaScript that could lead to security vulnerabilities.</li>
+                        <li>External links are reviewed to ensure they point to safe and relevant sources.</li>
+                    </ul>
+                    <li><h3>Content Appropriateness and Ethical Use</h3></li>
+                    <ul class="inner_points" >
+                        <li>The site contains nformative content, aligning with Janet’s guidelines on appropriate material.</li>
+                        <li>No offensive, misleading, or unauthorized material is published, ensuring compliance with acceptable use policies.</li>
+                    </ul>
+
+                    <li><h3>Technical Standards Compliance</h3></li>
+                    <ul class="inner_points">
+                        <li>The pages are validated using W3C HTML and CSS validators, ensuring clean and error-free code.</li>
+                        <li>The site is optimized for cross-browser compatibility, ensuring proper rendering on different devices and browsers.</li>
+                    </ul>
+                </ul>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+
+                    <ul class="ref">
+                        <li>Google Search. (n.d.). <a href="https://www.google.com/search?sca_esv=cc0ea5adc48b5c6f&biw=282&bih=179&hl=en-US&sxsrf=AHTn8zrJZNqjIOCKNcgJ6XlUAXSJljEekw:1741579549460&udm=48&si=APYL9buGmpQYpE6338c1FuRm_huDhoS-SW7UwUk0c_FqJnHYAdXy75cy21r0nXDWc0BvJ8y3T4zgOd-XMbFZ8rFfuXeoueXor2ZWzTvxL3elVMu1Mr0gNL8Nx_sztgqenNSt6v_4OlORp9Kh7ksfN61lsA0JnSEoOpvrev0-OXfBOTmkgKI0VshRfbcGoytD8Bx_2VIwiX8M&vsint=CAIqDAoCCAcSAggiGAAgATojChYNAAAAPxUAAAA_HQAAgD8lAACAPzABEJoCGLMBJQAAgD8&vsrid=CMOC9cGFyLfK0gEQAhgBIiRjZTBmOGFlNS04YjRlLTRkYjEtOWIwNC1iOTVhNGM1YWJiM2E&gsessionid=7HHy--8fu5vcyJdFzKRjs8HOQGwCcw5o2s99I9KZ6TAWYs5bjkwWGg&lsessionid=rUd7a9kocfT7hQNE2HO7YJ57HwRC-muR-XtGT7TPd3rnjeAcnohsiw&vsdim=282,179&lns_mode=un&source=lns.web.cntpubb&sa=X&ved=2ahUKEwie5ZKz0f6LAxXznK8BHViKN5wQpOwNegQIMhAA.">Fitness Introduction</a></li>
+                        <li>Google Search (March 2025).<a href="https://www.google.com/search?sca_esv=cc0ea5adc48b5c6f&biw=500&bih=458&hl=en-LK&sxsrf=AHTn8zoOc2I3PY597q3AQSYpOVj1ajUJbA:1741580227163&udm=48&si=APYL9buGmpQYpE6338c1FuRm_huDhoS-SW7UwUk0c_FqJnHYAdXy75cy21r0nXDWc0BvJ8w3_Ua0JF9AlsO3o9pm9TyLzoHF1uf7a7kcNZAIxJAeYZ4joOnS6jC-nB1hvVrJBqBosXZlfQRge4o2dToV6DgXw8JkfJV-fiXEoK11UDEde1Fjjscq6VG5O0e12czLpjO4rTmY&vsint=CAIqDAoCCAcSAggiGAAgATojChYNAAAAPxUAAAA_HQAAgD8lAACAPzABEJMCGLcBJQAAgD8&vsrid=COmEuey01-nRtwEQAhgBIiQwZGZjYjJjMi02Y2Q4LTQwNmMtYmIzMy1iNzQxNWU0MWM5YzY&gsessionid=u3oqyfvyMzUAc0pb95nKmEUSrMS7vS72MJjGBKXRAkbqSU4TQtCKfg&lsessionid=pE4QIgShaAhq479L7EzhDjy2nT9yCXg2-5sqNmOb-4MVKhHG_WxFzQ&vsdim=275,183&lns_mode=un&source=lns.web.gsbubb&sa=X&ved=2ahUKEwiHwKb20_6LAxVbhq8BHZ_TBrAQpOwNegQIUxAA.">Benifits of Fiteness Introduction</a></li>
+                        <li>Google Search (March 2025).<a href=" https://www.google.com/search?sca_esv=9497b0eb195b542d&biw=500&bih=458&hl=en-LK&sxsrf=AHTn8zrWXtcENR5Nij7_pdYzywHtV6gd8A:1741581060162&udm=48&si=APYL9buGmpQYpE6338c1FuRm_huDhoS-SW7UwUk0c_FqJnHYAdXy75cy21r0nXDWc0BvJ8wONloyGF9IzqvSMfKTCSsRlKjP0m_YTPHDsNyszLDxX4nOZPvqVpLnss6xka4xZfLb-C_z9ORc-4nJRRC7ondRkuA1lKCo6sShEILi36xIxk-32-cWqPMkoJgilicDfEt9VLIG&vsint=CAIqDAoCCAcSAggiGAAgATojChYNAAAAPxUAAAA_HQAAgD8lAACAPzABENgEGJADJQAAgD8&vsrid=CMmQ6fyTuo3S6AEQAhgBIiRiMGYzMzk3My03ODM0LTQyZDAtYWQwNy1jYWNmNzVjNjhkNjE&gsessionid=tCn8jmu-h8NNKAb22U1uTSJE-aWO66sm6B6_ZF-yXVwSmeQQGk0afQ&lsessionid=cA_7A5q3XmrtX39El_dlQWDlH5oLkKAJQAn6MNnbGAdYgPV1sHyf0Q&vsdim=600,400&lns_mode=un&source=lns.web.gsbubb&sa=X&ved=2ahUKEwj65MCD1_6LAxV0avUHHZuCCgYQpOwNegQIIhAA..">Fitness Routine</a></li>
+                        <li>Google Search (March 2025).<a href="https://www.google.com/search?sca_esv=9497b0eb195b542d&biw=500&bih=458&hl=en-LK&sxsrf=AHTn8zr0Mo8CsQgVd9dw9EgbDPEf_voyOg:1741580734504&udm=48&si=APYL9buGmpQYpE6338c1FuRm_huDhoS-SW7UwUk0c_FqJnHYAdXy75cy21r0nXDWc0BvJ8yzpddn5FCLGEdwAL-bhZ8SFa1A0ValnDKwIpxCEewI4nT-Xm87TmZjJ5ZQOu1OByHm-VvsOiXvK7PJ7xlDDDBVW3cQlyx0A55br8kpkFqPqAvQX2qScX3se_w-qzkMO_jmBk3k&vsint=CAIqDAoCCAcSAggiGAAgATojChYNAAAAPxUAAAA_HQAAgD8lAACAPzABELUCGKMBJQAAgD8&vsrid=CNmQod6hm6bHiQEQAhgBIiQyODgyOWUzOS03MzM1LTRlMmQtYjE5ZC0xYzI0MWE5MzhiM2Y&gsessionid=CYga75z5KjCuc28EiSrI9aKFFnDi93AKdYOHXNLIx0dWoO_KD2lq7Q&lsessionid=Gj8uKbG3bJsTvS3YlD806NeSYxy5wTMJNQwZa_n0uclrPdY5Mq8Vvw&vsdim=309,163&lns_mode=un&source=lns.web.gsbubb&sa=X&ved=2ahUKEwijmJzo1f6LAxX_e_UHHZc4PRMQpOwNegQIThAA.">Diet Plan For Fitness</a></li>
+                        <li>Google Search (March 2025).<a href="https://www.google.com/search?sca_esv=9497b0eb195b542d&biw=500&bih=458&hl=en-LK&sxsrf=AHTn8zriQuJRxrELs381GA6ytXUpvNcSlQ:1741581279259&udm=48&si=APYL9btjK_SNHmRaLFZVMyGWr-LxT8rQIr8yewLrph5b0QvV687i4otOMPkih6w3Y8GPY-mvD4s5jjwcf-HtSW8jGWHQeWZibW_zseF5iA8LCSV4F22QcHtE9tOM8gxnfO-td3uYwbl1sLFnhEr41tM-nf62LVr7GfsiK6CkQ16hEfN-hzx2fxWQHmN1URipX0_B3UvNLzQ4&vsint=CAIqDAoCCAcSAggiGAAgATojChYNAAAAPxUAAAA_HQAAgD8lAACAPzABEJMCGLcBJQAAgD8&vsrid=CNGFsZH00-_ViAEQAhgBIiRlMzBlODFjYy0zZDQ3LTQ2YTgtYmY3ZC1kYmM0OWUyZWE0ZTY&gsessionid=-Reotpa5fxewGBlpcF5qrWK_NLh5v7sWcBh-NpjcXFszpEXLUPW80w&lsessionid=4mHSZQSwnMIOkbzpWdwhp9Vn9OPCOZoBqYYoUr0eVHrcz_ygo8x5aA&vsdim=275,183&lns_mode=un&source=lns.web.gsbubb&sa=X&ved=2ahUKEwjEsf3r1_6LAxXTjK8BHa03N88QpOwNegQITBAA.">Success Stories</a></li>
+                        <li>MDN Web Docs (Mozilla Developer Network). Available at: <a href=" https://developer.mozilla.org/en-US/docs/Web/CSS"> https://developer.mozilla.org/en-US/docs/Web/CSS</a>(Accessed: March 2025).</li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                    <ul> 
+                        <li><a href="./pageEditor_ST01.html#splash">Splash page</a></li>
+                        <li><a href="./pageEditor_ST01.html#volunteer">Volunteer page</a></li>
+                        <li><a href="./pageEditor_ST01.html#content">Content page</a></li>
+                    </ul>
+                <li>Student 2</li>
+                    <ul>
+                        <li><a href="#home_page">Home page </a></li>
+                        <li><a href="#table">Table page</a></li>
+                        <li><a href="#content">Content page</a></li>
+                    </ul>
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="./validation_ST03.html#feedbackVal">Feedback page</a> </li>
+                        <li><a href="./validation_ST03.html#teamVal">Team page</a></li>
+                        <li><a href="./validation_ST03.html#contentVal">Content page</a></li>
+                    </ul>
+                <li>Student 4</li>
+                    <ul>
+                        <li><a href="./validation_ST04.html#userProfileVal">Profile page </a></li>
+                        <li><a href="./validation_ST04.html#sitemapVal">Sitemap page</a></li>
+                        <li><a href="./validation_ST04.html#contentVal">Content page</a></li>
+                    </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST02.html">Page Editor: Thisini Rathnayake</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>   
+     </footer>
+</body>
+</html>

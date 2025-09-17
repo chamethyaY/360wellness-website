@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360  Wellness-Sitemap</title>
+    <link rel="stylesheet" href="./global.css">
+    <style>
+        
+        /* Sitemap chart styles */
+        .sitemap-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .sitemap-svg {
+            width: 100%;
+            height: auto;
+            min-height: 400px;
+        }
+
+        a:focus, button:focus, .node:focus, .dropdown-toggle:focus {
+            box-shadow: 0px 0px 10px rgba(0, 127, 91, 0.8);
+            border-radius: 6px;
+        }
+
+        /* For SVG nodes */
+        .node:focus {
+            stroke: #C5C7C3; /* Gold stroke */
+            stroke-width: 3;
+            fill: #005A40; /* Darker green */
+        }
+
+        .node {
+            fill: #144235;
+            border-radius:10px ;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .node:hover, .node:focus {
+            fill: #007F5B;
+        }
+
+        .node-text {
+            fill: white;
+            font-size: 14px;
+            pointer-events: none;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        .connection {
+            stroke: #144235;
+            stroke-width: 2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sitemap-svg {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top_header">
+        <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+    </header>
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<svg  viewBox="0 0 1400 700" class="sitemap_svg" aria-label="Website Sitemap">
+    <!-- Connections from Home to main level -->
+    <line x1="700" y1="80" x2="700" y2="150" class="connection" />
+    <line x1="100" y1="150" x2="1300" y2="150" class="connection" />
+
+    <!-- Vertical lines to each middle node -->
+    
+        <line x1="100" y1="150" x2="100" y2="200" class="connection"/>
+        <line x1="250" y1="150" x2="250" y2="200" class="connection"/>
+        <line x1="400" y1="150" x2="400" y2="200" class="connection"/>
+        <line x1="550" y1="150" x2="550" y2="200" class="connection"/>
+        <line x1="700" y1="150" x2="700" y2="200" class="connection"/>
+        <line x1="850" y1="150" x2="850" y2="200" class="connection"/>
+        <line x1="1000" y1="150" x2="1000" y2="200" class="connection"/>
+        <line x1="1150" y1="150" x2="1150" y2="200" class="connection"/>
+        <line x1="1300" y1="150" x2="1300" y2="200" class="connection"/>
+    
+
+    <!-- Connection from Contents node to horizontal line -->
+    <line x1="700" y1="240" x2="700" y2="300" class="connection" />
+    <line x1="470" y1="300" x2="800" y2="300" class="connection" />
+    
+    <!-- Vertical lines to Content sub-nodes -->
+    
+        <line x1="470" y1="300" x2="470" y2="350" class="connection"/>
+        <line x1="580" y1="300" x2="580" y2="350" class="connection"/>
+        <line x1="690" y1="300" x2="690" y2="350" class="connection"/>
+        <line x1="800" y1="300" x2="800" y2="350" class="connection"/>
+    
+
+    <!-- Connection from Page Editor node to horizontal line -->
+    <line x1="1000" y1="240" x2="1000" y2="400" class="connection" />
+    <line x1="770" y1="400" x2="1100" y2="400" class="connection" />
+    
+    <!-- Vertical lines to Page Editor sub-nodes -->
+    
+        <line x1="770" y1="400" x2="770" y2="450" class="connection"/>
+        <line x1="880" y1="400" x2="880" y2="450" class="connection"/>
+        <line x1="990" y1="400" x2="990" y2="450" class="connection"/>
+        <line x1="1100" y1="400" x2="1100" y2="450" class="connection"/>
+    
+
+    <!-- Connection from Validation node to horizontal line -->
+    <line x1="1300" y1="240" x2="1300" y2="500" class="connection" />
+    <line x1="1070" y1="500" x2="1400" y2="500" class="connection" />
+    
+    <!-- Vertical lines to Validation sub-nodes -->
+    
+        <line x1="1070" y1="500" x2="1070" y2="550" class="connection"/>
+        <line x1="1180" y1="500" x2="1180" y2="550" class="connection"/>
+        <line x1="1290" y1="500" x2="1290" y2="550" class="connection"/>
+        <line x1="1400" y1="500" x2="1400" y2="550" class="connection"/>
+    
+
+    <!-- Home node -->
+    <a href="./homepage.html">
+        <rect x="650" y="40" width="100" height="40" class="node" rx="5" ry="5" tabindex="0">
+            <title>Home Page</title>
+        </rect>
+        <text x="700" y="65" class="node-text">Home</text>
+    </a>
+
+    <!-- Child nodes -->
+    <a href="./volunteer_page.html">
+        <rect x="50" y="200" width="100" height="40" class="node" rx="5" ry="5" tabindex="0">
+            <title>Join Us Page</title>
+        </rect>
+        <text x="100" y="225" class="node-text">Join us</text>
+    </a>
+
+    <a href="./table.html">
+        <rect x="200" y="200" width="100" height="40" class="node"  rx="5" ry="5" tabindex="0">
+            <title>Projects Page</title>
+        </rect>
+        <text x="250" y="225" class="node-text">Projects</text>
+    </a>
+
+    <a href="./feedback.html">
+        <rect x="350" y="200" width="100" height="40" class="node"  rx="5" ry="5" tabindex="0">
+            <title>Feedback</title>
+        </rect>
+        <text x="400" y="225" class="node-text">Feedback</text>
+    </a>
+
+    <a href="./user_profile.html">
+        <rect x="500" y="200" width="100" height="40" class="node"  rx="5" ry="5" tabindex="0">
+            <title>User Profile Page</title>
+        </rect>
+        <text x="550" y="225" class="node-text">User Profile</text>
+    </a>
+
+    <a href="./content.html">
+        <rect x="650" y="200" width="100" height="40" class="node" rx="5" ry="5" tabindex="0">
+            <title>Contents Page</title>
+        </rect>
+        <text x="700" y="225" class="node-text">Contents</text>
+    </a>
+
+    <a href="./Team.html">
+        <rect x="800" y="200" width="100" height="40" class="node" rx="5" ry="5" tabindex="0">
+            <title>Our Team Page</title>
+        </rect>
+        <text x="850" y="225" class="node-text">Our Team</text>
+    </a>
+
+    <a href="./pageEditor_ST01.html">
+        <rect x="950" y="200" width="100" height="40" class="node"  rx="5" ry="5" tabindex="0">
+            <title>Page Editor</title>
+        </rect>
+        <text x="1000" y="225" class="node-text"  >Page Editor</text>
+    </a>
+
+    <a href="./sitemap.html">
+        <rect x="1100" y="200" width="100" height="40" class="node" rx="5" ry="5" tabindex="0">
+            <title>Sitemap Page</title>
+        </rect>
+        <text x="1150" y="225" class="node-text"  >Sitemap</text>
+    </a>
+
+    <a href="./validation_ST01.html">
+        <rect x="1250" y="200" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Validation Page</title>
+        </rect>
+        <text x="1300" y="225" class="node-text" >Validation</text>
+    </a>
+
+    <!-- Contents Sub-Nodes - Properly Spaced -->
+    <a href="./content_page1.html">
+        <rect x="420" y="350" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Content 1</title>
+        </rect>
+        <text x="470" y="375" class="node-text"  >Content 1</text>
+    </a>
+
+    <a href="./content_page2.html">
+        <rect x="530" y="350" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Content 2</title>
+        </rect>
+        <text x="580" y="375" class="node-text"  >Content 2</text>
+    </a>
+
+    <a href="./content_page3.html">
+        <rect x="640" y="350" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Content 3</title>
+        </rect>
+        <text x="690" y="375" class="node-text"  >Content 3</text>
+    </a>
+
+    <a href="./content_page4.html">
+        <rect x="750" y="350" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Content 4</title>
+        </rect>
+        <text x="800" y="375" class="node-text"  >Content 4</text>
+    </a>
+
+    <!-- Page Editor Sub-Nodes - Properly Spaced -->
+    <a href="./pageEditor_ST01.html">
+        <rect x="720" y="450" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Page Editor 1</title>
+        </rect>
+        <text x="770" y="475" class="node-text"  >Editor 1</text>
+    </a>
+
+    <a href="./pageEditor_ST02.html">
+        <rect x="830" y="450" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Page Editor 2</title>
+        </rect>
+        <text x="880" y="475" class="node-text"  >Editor 2</text>
+    </a>
+
+    <a href="./pageEditor_ST03.html">
+        <rect x="940" y="450" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Page Editor 3</title>
+        </rect>
+        <text x="990" y="475" class="node-text"  >Editor 3</text>
+    </a>
+
+    <a href="./pageEditor_ST04.html">
+        <rect x="1050" y="450" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Page Editor 4</title>
+        </rect>
+        <text x="1100" y="475" class="node-text"  >Editor 4</text>
+    </a>
+
+    <!-- Validation Sub-Nodes - Properly Spaced -->
+    <a href="./validation_ST01.html">
+        <rect x="1020" y="550" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Validation 1</title>
+        </rect>
+        <text x="1070" y="575" class="node-text"  >Validation 1</text>
+    </a>
+
+    <a href="./validation_ST02.html">
+        <rect x="1130" y="550" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Validation 2</title>
+        </rect>
+        <text x="1180" y="575" class="node-text"  >Validation 2</text>
+    </a>
+
+    <a href="./Validation_ST03.html">
+        <rect x="1240" y="550" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Validation 3</title>
+        </rect>
+        <text x="1290" y="575" class="node-text"  >Validation 3</text>
+    </a>
+
+    <a href="./validation_ST04.html">
+        <rect x="1350" y="550" width="100" height="40" class="node"   rx="5" ry="5" tabindex="0">
+            <title>Validation 4</title>
+        </rect>
+        <text x="1400" y="575" class="node-text"  >Validation 4</text>
+    </a>
+</svg>
+<footer>
+    <div>
+        <img src="./images/footer_logo.png" alt="footer logo">
+        <div class="Editor">
+            <a href="./pageEditor_ST04.html#sitemap">Page Editor: Vishmi Fernando</a>
+        </div>
+        
+    </div>
+    <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+</footer>
+</body>
+</html>

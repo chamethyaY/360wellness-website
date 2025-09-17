@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Eating & Nutrition</title>
+    <link rel="stylesheet" href="./global.css">
+    <style>
+        
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        body {
+            
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .content_heading {
+            background-color: #007F5B;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 44px;
+            font-weight: bold;
+            position:sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+            margin-bottom: 0;
+            padding: 10px 15px;
+            
+            
+            
+        }
+        .container {
+            display: flex;
+            position: relative;
+        }
+        
+        .sidebar {
+            width: 220px;
+            background: rgba(20, 66, 53, 0.8); /* Dark green with transparency */
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
+            color: white;  
+            top: 0;
+            left: 0;
+            height: auto;
+            padding-top: 50px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            overflow-y: auto;
+            z-index: 1;
+            
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            
+        }
+
+        .sidebar ul li {
+            padding: 12px;
+            text-align: left;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            font-size:20px;
+        }
+
+        .sidebar ul li a:hover {
+            background: #2A4B33;
+            padding-left: 15px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+   
+        .content {
+            align-items: center;
+            padding:  20px;
+            flex: 1;
+            padding-top: 50px;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Blurred glass effect */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        h2{
+            color: #007F5B;
+            font-size: 31px;
+        }
+        p{
+            font-size: 23px;
+        }
+        h3{
+            font-size: 24px;
+        }
+        .first{
+            font-size: 20px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+
+        .top-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #5CB85C;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+
+        .top-button:hover {
+            background-color: #007F5B;
+            transform: scale(1.1);
+        }
+
+        .tips-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .tip-box {
+        background-color: #C5C7C3;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        text-align: center;
+        width: 200px;
+    }
+
+    .tip-box img {
+        width: 100%;
+        height: 120px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    .tip-box p {
+        
+        font-weight: bold;
+        color: #144235;
+        margin-top: 10px;
+    }
+
+    .events-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .event-box {
+        background-color: #C5C7C3;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 300px;
+    }
+    .join-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007F5B;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+    .join-button:hover {
+        background-color: #144235;
+    }
+
+    .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            z-index: -1; 
+            margin-top: 0px;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 127, 91, 0.5); 
+            z-index: -1;
+        }
+
+   
+        @media screen and (max-width: 1024px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+            }
+            .sidebar ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .sidebar ul li{
+                font-size: 16px;
+                padding: 10px;
+            }
+            .container{
+                flex-direction: column;
+            }
+
+            .content {
+                margin-left: 0;
+                padding-top: 20px;
+                padding: 20px;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            .navbar ul{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .navbar ul li{
+                margin: 5px;
+            }
+            
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="top_header">
+        <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+    </header>
+        
+ 
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+              </ul>
+        </nav>
+    </div>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="./video/background.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="video-overlay"></div> 
+    </div>
+
+
+    <div class="content_heading">
+        Healthy Eating & Nutrition
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#importance">Importance of Nutrition</a></li>
+                <li><a href="#balanced">Balanced Diet</a></li>
+                <li><a href="#tips">Healthy Eating Tips</a></li>
+                <li><a href="#hydration">Hydration</a></li>
+                <li><a href="#events">Up coming events</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <section id="intro">
+                <h2>Introduction to Healthy Eating</h2>
+                <p>Healthy eating is essential for maintaining overall well-being and a strong body. It involves consuming a balanced diet rich in nutrients, including fruits, vegetables, whole grains, and lean proteins. Proper nutrition provides the energy needed for daily activities and helps prevent various diseases. Making healthy food choices supports brain function, improves mood, and boosts immunity. Drinking enough water and avoiding excessive processed foods also contribute to a healthier lifestyle. 
+                    Developing good eating habits ensures long-term health and a better quality of life..</p>
+                <img src="./images/eating_foods.jpg" alt="Person enjoying a healthy meal">
+            </section>
+    
+            <section id="importance">
+                <h2>Why Nutrition is Important ?</h2>
+                <p>Nutrition is important because it provides the body with essential nutrients needed for growth, energy, and overall health. A well-balanced diet supports immune function, helping to prevent diseases and infections. Proper nutrition improves brain function, enhancing focus, memory, and mental well-being. It also plays a key role in maintaining a healthy weight and reducing the risk of chronic illnesses like diabetes and heart disease. 
+                    Good nutrition leads to a better quality of life by promoting physical and mental well-being.</p>
+                <img src="./images/nutrition.jpg" alt="Infographic on nutrition benefits">
+            </section>
+    
+            <section id="balanced">
+                <h2>What is a Balanced Diet?</h2>
+                <p>A balanced diet is a meal plan that provides all essential nutrients in the right proportions for optimal health. It includes carbohydrates, proteins, fats, vitamins, minerals, and water in appropriate amounts. Eating a variety of foods ensures the body gets the energy and nourishment it needs. 
+                    A well-balanced diet helps maintain body functions, supports growth, and prevents nutritional deficiencies.</p>
+                <img src="./images/health-plate.png" alt="Balanced meal on a plate">
+            </section>
+    
+            <section id="tips">
+                <h2>Healthy Eating Tips</h2>
+                <div class="tips-container">
+                    <div class="tip-box">
+                        <img src="./images/fruits.jpg" alt="Fresh fruits and vegetables">
+                        <p>Eat more fresh fruits and vegetables</p>
+                    </div>
+                    <div class="tip-box">
+                        <img src="./images/avoid-foods.jpg" alt="Avoid processed foods">
+                        <p>Avoid processed and sugary foods</p>
+                    </div>
+                    <div class="tip-box">
+                        <img src="./images/portion.jpg" alt="Portion control">
+                        <p>Maintain portion control</p>
+                    </div>
+                    <div class="tip-box">
+                        <img src="./images/fiber_rich.jpg" alt="Fiber-rich foods">
+                        <p>Include fiber-rich foods in your diet</p>
+                    </div>
+                    <div class="tip-box">
+                        <img src="./images/prepartion.jpg" alt="Meal preparation">
+                        <p>Plan and prepare meals in advance</p>
+                    </div>
+                </div>
+            </section>
+    
+    
+            <section id="hydration">
+                <h2>Hydration and its Importance</h2>
+                <p>Hydration is the process of providing the body with enough water to function properly. Water is essential for digestion, circulation, temperature regulation, and waste removal. Staying hydrated improves energy levels, concentration, and overall health. 
+                    Proper hydration also helps prevent dehydration, which can cause fatigue, headaches, and other health issues.</p>
+                <div class="tips-container">
+                <div class="tip-box">
+                    <img src="./images/drinking.jpg" alt="Portion control">
+                    <p>Drink at least 8 glasses of water daily</p>
+                </div>
+                <div class="tip-box">
+                    <img src="./images/limit_sugar.jpg" alt="Fiber-rich foods">
+                    <p>Limit sugary and caffeinated beverages</p>
+                </div>
+                <div class="tip-box">
+                    <img src="./images/watermelon.png" alt="Meal preparation">
+                    <p>Eat hydrating foods like watermelon and cucumber</p>
+                </div>
+            </div>
+    
+    
+            </section>
+    
+            <section id="events">
+                <h2>Upcoming Events</h2>
+                <div class="events-container">
+                    <div class="event-box">
+                        <h3>Blood Donation Program</h3>
+                        <p class="first">"Be a hero! Join our blood donation program and save lives with a single act of kindness."</p>
+                        <a href="./volunteer_page.html#blood_d" class="join-button">Join Now</a>
+                    </div>
+                    <div class="event-box">
+                        <h3>Self Awareness and Well-Being Program</h3>
+                        <p class="first">"Prioritize yourself!  Join our Self-Awareness & Well-Being Program for a healthier, happier you."</p>
+                        <a href="./volunteer_page.html#health" class="join-button">Join Now</a>
+                    </div>
+                    <div class="event-box">
+                        <h3>Fitness Awareness Volunteer Program</h3>
+                        <p class="first">"Get active, give back! Join our Fitness Awareness Volunteer Program and inspire a healthier community."</p>
+                        <a href="./volunteer_page.html#fitness" class="join-button">Join Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <a href="#top" class="top-button">&#8593;</a>
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST03.html#content">Page Editor: Chamethya Yasodie</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+    </footer>
+</body>
+</html>

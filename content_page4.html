@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Wellness - contentpage04</title>
+    <link rel="stylesheet" href="./global.css">
+
+    <style>
+        
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+       
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+            z-index: -1;
+        }
+
+
+        .topic-header {
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+            padding: 20px;
+            border-radius: 10px;
+            color: white; /* Ensure readability */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+
+
+        }
+
+
+        .topic-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #422E26;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .para {
+            color: #F5F4E9 ;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+        }
+
+        .subtopic {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #2A4B33;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            margin: 1.5rem auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.02);
+        }
+
+        .stress-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stress-list li {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            outline: darkkhaki;
+            color: #F5F4E9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .stress-list li::before {
+            content: '→';
+            margin-right: 1rem;
+            color: #F5F4E9;
+        }
+
+        /* Quick Hacks & Events */
+        .quick-tips,
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip-card,
+        .event-card {
+            background: #C5C7C3;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #2A4B33;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #422E26;
+        }
+
+        .tip-card:hover,
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-card h3 {
+            color: #422E26;
+        }
+
+        .event-card a {
+            color: #422E26;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .event-card a:hover {
+            color: #422E26;
+        }
+
+       
+        .content { 
+            max-width: 1200px;
+            margin: 20px auto; 
+            padding: 20px; }
+        .section-card { 
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+         }
+        .interactive-section {
+            text-align: center; 
+            padding: 20px; 
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border-radius: 15px;
+            color: white;
+            
+         }
+
+        .interactive-section button {
+             padding: 10px 20px; 
+             background: #2A4B33; 
+             color: white; 
+             border: none;
+            cursor: pointer; 
+        }
+
+        .quiz-container { 
+            text-align: left;
+             background: rgba(255, 255, 255, 0.2); 
+             padding: 20px; 
+             border-radius: 10px; 
+             display: none; }
+
+           
+
+        .quiz-container h2 { 
+            text-align: center;
+         }
+
+
+        .quiz-container label { 
+            display: block; margin: 10px 0; }
+
+
+        .container {
+            background-color: #C5C7C3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .tips {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e2f4e1;
+            border-radius: 5px;
+            font-size: 14px;
+        }    
+        
+        /* Quiz Section */
+        .quiz-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin: 20px auto;
+            animation: fadeIn 1s ease-in-out;
+            color: white;
+        }
+
+        .quiz-container h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white; /* Ensure readability */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .quiz-container label {
+            display: block;
+            background: #2A4B33;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 8px 0;
+            cursor: pointer;
+            transition:  0.3s ease;
+        }
+
+        .quiz-container label:hover {
+    background: #3a7c59; /* Change background color */
+    color: white; /* Change text color */
+    transform: scale(1.05); /* Slightly increase size */
+    transition: 0.3s ease-in-out;
+}
+
+
+        .interactive-section button {
+    background: #2A4B33; /* Dark green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out, transform 0.2s;
+}
+
+.interactive-section button:hover {
+    background: #125f49b9; /* Light green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+        
+
+        .quiz-container button {
+            background: #137458;
+            color: #C5C7C3;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .quiz-container button:hover {
+            background: #144235;
+        }
+
+        .interactive-section button :hover{
+            background-color: #01a778b0;
+        }
+
+        
+        /* Mood Tracker */
+        .container {
+            background: linear-gradient(120deg ,#334a33, #063013);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #c5c7c3;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            width: 320px;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        select {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            background: #c5c7c3;
+            color: #222;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .tips {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .mood-management {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}
+
+.mood-management h2 {
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.3);
+    color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+
+th, td {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+td {
+    text-align: left;
+    color: #422E26;
+}
+th {
+    background-color: #2A4B33;
+    color: white;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.mood-tips a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #2A4B33;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition:  0.3s;
+}
+
+.mood-tips a:hover {
+    background: #01a778;
+}
+
+#happy-details-btn, #sad-details-btn,
+ #stressed-details-btn, #angry-details-btn,
+ #neutral-details-btn {
+    background: none;
+    border: none;
+    color: #422E26;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+ }
+
+ #happy-details-btn, #sad-details-btn,
+ #stressed-details-btn, #angry-details-btn,
+ #neutral-details-btn:hover {
+    color: #414226;
+ }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+            
+
+        .top-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #2A4B33;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+        }
+
+        .top-btn:hover {
+            background:#007F5B;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .topic-header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            .quick-tips,
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <header class="top_header">
+            <div class="header">
+                <a href="./homepage.html">
+                    <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+                </a>
+                <a href="./user_profile.html">
+                    <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+                </a>
+            </div>
+        </header>
+        
+    </header>
+    <div class="navbar">
+        <nav id="navbar">
+            <ul >
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+ 
+            </ul>
+        </nav>
+    </div>
+
+    <!--Add Background Video-->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="./video/content4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="video-overlay"></div>
+
+    <header class="topic-header">
+        <h1>Mental Health & Stress Management</h1>
+        <p><strong>Your guide to a balanced and stress-free life</strong></p>
+    </header>
+
+    <main class="content">
+        <section id="intro" class="section-card">
+            <h2 class="subtopic">Finding Balance in a Busy World</h2>
+            <p class="para">In today's fast-paced world, juggling work, studies, relationships, and personal goals can feel overwhelming.
+               <strong>Deadlines, social media, financial pressures, and endless to-do lists</strong> leave little room for relaxation.
+               But don't worry! We're here to help you find your balance.</p>
+               
+        </section>
+
+        <section id="why_stress" class="section-card">
+            <h2 class="subtopic">Why Are We So Stressed?</h2>
+            <ul class="stress-list">
+                <li>Work & Study Pressure: Constant deadlines and expectations</li>
+                <li>Digital Overload: Always connected, never resting</li>
+                <li>Financial Stress: Managing expenses and future planning</li>
+                <li>Lack of "Me Time: Struggling to find personal space</li>
+            </ul>
+        </section>
+
+        <section class="interactive-section">
+            <h2>How Stressed Are You?</h2>
+            <p>Take this short quiz to find out!</p>
+            <button onclick="showQuiz()">Start Quiz</button>
+        </section>
+        
+        <div class="quiz-container" id="quiz">
+            <h2>Stress Level Quiz</h2>
+            <form id="quizForm">
+                <p>1. How often do you feel overwhelmed by daily tasks?</p>
+                <label><input type="radio" name="q1" value="10"> Often</label>
+                <label><input type="radio" name="q1" value="5"> Sometimes</label>
+                <label><input type="radio" name="q1" value="0"> Rarely</label>
+                
+                <p>2. How well do you sleep at night?</p>
+                <label><input type="radio" name="q2" value="10"> Poorly</label>
+                <label><input type="radio" name="q2" value="5"> Average</label>
+                <label><input type="radio" name="q2" value="0"> Well</label>
+                
+                <p>3. Do you find it difficult to concentrate?</p>
+                <label><input type="radio" name="q3" value="10"> Yes</label>
+                <label><input type="radio" name="q3" value="5"> Sometimes</label>
+                <label><input type="radio" name="q3" value="0"> No</label>
+                
+                <p>4. How often do you engage in physical exercise?</p>
+                <label><input type="radio" name="q4" value="0"> Regularly</label>
+                <label><input type="radio" name="q4" value="5"> Occasionally</label>
+                <label><input type="radio" name="q4" value="10"> Rarely</label>
+                
+                <p>5. How do you handle stressful situations?</p>
+                <label><input type="radio" name="q5" value="10"> Not well</label>
+                <label><input type="radio" name="q5" value="5"> Okay</label>
+                <label><input type="radio" name="q5" value="0"> Well</label>
+                
+                <p>6. Do you make time for relaxation and hobbies?</p>
+                <label><input type="radio" name="q6" value="0"> Yes</label>
+                <label><input type="radio" name="q6" value="5"> Sometimes</label>
+                <label><input type="radio" name="q6" value="10"> No</label>
+                
+                <button type="button" onclick="calculateStress()">Submit</button>
+            </form>
+            
+        </div>
+
+        <div class="container">
+            <h1>Mood Tracker</h1>
+            <label for="mood-selector">How are you feeling today?</label>
+            <select id="mood-selector">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="stressed">Stressed</option>
+                <option value="angry">Angry</option>
+                <option value="neutral">Neutral</option>
+            </select>
+            <div id="mood-tips" class="tips">
+                <p>Choose your mood for personalized tips!</p>
+            </div>
+        </div>
+        
+        <section class="interactive-section">
+            <h2>Today's Daily Affirmation</h2>
+            <p class="affirmation" id="affirmation">"You are capable of handling anything life throws at you."</p>
+        </section>
+
+        <!-- Mood Management Table -->
+<div class="mood-management">
+    <h2>How to Manage Your Mood</h2>
+    <table id="mood-table">
+        <tr>
+            <th>Mood</th>
+            <th>Management Tips</th>
+        </tr>
+        <tr id="happy">
+            <td><strong>Happy</strong></td>
+            <td>
+                <ul>
+                    <li><strong>Write in a gratitude journal:</strong> Helps you appreciate good moments and attract more happiness. </li>
+                    <li><strong>Dance or sing:</strong> Releases energy and boosts mood even more.</li>
+                    <li><strong>Buy yourself a small gift:</strong> Rewards yourself and creates a lasting memory of the moment.</li>
+                    <li><strong>Self-care (spa, skincare, bath):</strong> Makes you feel even better and promotes well-being.
+                    </li>
+                    <li><strong>Work on a hobby or project:</strong> Happiness fuels creativity and motivation.
+                    </li>
+                </ul>
+                <div id = "happy-details" style="display: none;">
+                    <ul>   
+                        <li><strong>Organize your space:</strong> Happiness gives energy to declutter and improve surroundings.
+                        </li>
+                        <li><strong>Plan or take a trip:</strong> Exciting experiences enhance positive emotions.
+                        </li>
+                        <li><strong>Donate or volunteer:</strong> Acts of kindness increase personal fulfillment.
+                        </li>
+                    </ul>
+                </div>
+                <button id="happy-details-btn" onclick="toggleDetails('happy-details')">See More</button>
+                <br>
+                <strong>
+                "Happiness gives us energy, motivation, and a positive outlook,
+                 so it's the best time to do things that enhance our well-being, create memories, and spread joy."</strong> 
+            </td>
+        </tr>
+        <tr id="sad">
+            <td><strong>Sad</strong></td>
+            <td>
+                <ul>
+                    <li><strong>Talk to someone you trust:</strong> Expressing feelings helps lighten emotional burdens.
+                    </li>
+                    <li><strong>Write in a journal:</strong> Helps process emotions and gain clarity and Shifting focus to positive things can bring balance.
+                    </li>
+                    <li><strong>Listen to comforting music:</strong> Music can soothe emotions and provide relief.
+                    </li>
+                    <li><strong>Take deep breaths or meditate:</strong> Calms the mind and reduces stress.
+                    </li>
+                    <li><strong>Cry if needed:</strong> Releases built-up emotions and provides relief.
+                    </li>
+                </ul>
+                <div id="sad-details" style="display: none;">
+                    <ul>
+                        <li><strong>Treat yourself to something small:</strong> A little joy can brighten your mood.
+                        </li>
+                        <li><strong>Do a creative activity (drawing, writing, DIY, music):</strong> Expressing emotions creatively helps process them.
+                        </li>
+                        <li><strong>Engage in acts of kindness:</strong> Helping others can create a sense of purpose.
+                        </li>
+                    </ul>
+                </div>
+                <button id="sad-details-btn" onclick="toggleDetails('sad-details')">See More</button>
+                <br>
+                <strong>"Sadness is temporary, and taking small actions can 
+                    help ease the pain and bring comfort."</strong>
+            </td>
+        </tr>
+        <tr id="stressed">
+            <td><strong>Stressed</strong></td>
+            <td>
+                <ul>
+                    <li><strong>Take deep breaths or meditate:</strong> Calms the nervous system and reduces tension.
+                    </li>
+                    <li><strong>Listen to calming music:</strong> Helps slow down racing thoughts.
+                    </li>
+                    <li><strong>Write down your thoughts:</strong> Organizing emotions on paper brings clarity.
+                    </li>
+                    <li><strong>Do something creative:</strong> Painting, writing, or music can serve as an emotional outlet.
+                    </li>
+                    <li><strong>Avoid caffeine or heavy meals:</strong> Stimulants can make stress feel worse.
+                    </li>
+                </ul>
+                <div id="stressed-details" style="display: none;">
+                    <ul>
+                        <li><strong>Engage in a hobby:</strong> Doing something enjoyable shifts focus away from stress.
+                        </li>
+                        <li><strong>Get enough sleep:</strong> Rest is crucial for emotional balance.
+                        </li>
+                        <li><strong>Set boundaries:</strong> Saying “no” to extra pressure helps protect your peace.
+                        </li>
+                    </ul>
+                </div>
+                <button id="stressed-details-btn" onclick="toggleDetails('stressed-details')">See More</button>
+                <br>
+                <strong>"Stress is temporary, and managing it with simple actions can prevent burnout." </strong>
+            </td>
+        </tr>
+        <tr id="angry">
+            <td><strong>Angry</strong></td>
+            <td>
+                <ul>
+                    <li><strong>Walk away from the situation:</strong> Distance gives you time to cool down and think clearly.
+                    </li>
+                    <li><strong>Count to 10 (or more):</strong> Delays impulsive reactions and helps regain control.
+                    </li>
+                    <li><strong>Write down your feelings:</strong> Helps process emotions instead of bottling them up.
+                    </li>
+                    <li><strong>Forgive (if possible):</strong> Holding onto anger only hurts you in the long run.
+                    </li>
+                    <li><strong>Engage in self-care:</strong> A warm bath, skincare, or relaxation can soften negative emotions.
+                    </li>
+                </ul>
+                <div id="angry-details" style="display: none;">
+                    <ul>    
+                        <li><strong>Go outside (nature walk, fresh air):</strong> Nature has a calming effect on emotions.
+                        </li>
+                        <li><strong>Go outside (nature walk, fresh air):</strong> Nature has a calming effect on emotions.
+                        </li>
+                        <li><strong>Talk to someone you trust:</strong> Expressing anger in a safe space can help you feel heard.
+                        </li>
+                    </ul>
+                </div>
+                <button id="angry-details-btn" onclick="toggleDetails('angry-details')">See More</button>
+                <br>
+                <strong>Anger is natural, but how you handle it matters. Redirecting it positively prevents regret and stress.</strong>
+            </td>
+        </tr>
+        <tr id="neutral">
+            <td><strong>Neutral</strong></td>
+            <td>
+                <ul>
+                    <li><strong>Do a small task or project:</strong> Staying productive can help shift your mood or bring a sense of accomplishment.
+                    </li>
+                    <li><strong>Read or watch something interesting:</strong> Engaging content can spark curiosity and break the neutral feeling.
+                    </li>
+                    <li><strong>Try something new:</strong> Experimenting with a new hobby or activity adds variety and excitement.
+                    </li>
+                    <li><strong>Plan or reflect on goals:</strong> Helps you stay focused on things you want to achieve.
+                    </li>
+                    <li><strong>Practice a short self-care routine:</strong> Even a quick skincare routine or a face mask can refresh you.
+                    </li>
+                </ul>
+                <div  id="neutral-details" style="display: none;">
+                    <ul>  
+                    <li><strong>Daydream or visualize your future:</strong> Allows you to imagine possibilities, making the neutral feeling feel more exciting.
+                    </li>
+                    <li><strong>Relax with a cup of tea or coffee:</strong> Taking time for a simple pleasure can be comforting and grounding.
+                    </li>
+                    <li><strong>Declutter your space:</strong> Organizing your surroundings gives a sense of order and productivity.
+                    </li>
+                </ul>
+                </div>
+                <button id="neutral-details-btn" onclick="toggleDetails('neutral-details')">See More</button>
+                <br>
+                <strong>When you're neutral, it's a great time to maintain balance or try something new to shift into a more energized state. </strong>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+        <section id="stress-relief" class="section-card">
+            <h2 class="subtopic">Quick Stress-Relief Hacks</h2>
+            <div class="quick-tips">
+                <div class="tip-card">
+                    <h3>2-Minute Deep Breathing</h3>
+                    <p>Take deep breaths, focusing on each inhale and exhale</p>
+                    <img src="./images/meditationman.jpg" alt="Breathing excercise image">
+                </div>
+                <div class="tip-card">
+                    <h3>1-Minute Gratitude</h3>
+                    <p>Write down three things you're grateful for
+                    </p>
+                    <img src="./images/journalling.webp" alt="Journalling Image">
+                </div>
+                <div class="tip-card">
+                    <h3>5-Minute Walk Break</h3>
+                    <p>Step outside for a quick refreshing walk</p>
+                    <br>
+                    <img src="./images/walkbreak.webp" alt="walkbreak Image ">
+                </div>
+            </div>
+            </section>
+            
+        
+
+        <section id="events" class="section-card">
+            <h2 class="subtopic">Join Our Wellness Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <h3>Blood Donation Camp</h3>
+                    <p>Give back to the community while boosting your mental well-being</p>
+                    <a href="./volunteer_page.html#blood_d">Learn More →</a>
+                    <img src="./images/blood-donation-volunteering.jpg" alt="volunteering for blood donation">
+                </div>
+                <div class="event-card">
+                    <h3>Mental Health Program</h3>
+                    <p>Professional counseling and support sessions</p>
+                    <a href="./volunteer_page.html#mental">Join Now →</a>
+                    <br>
+                    <img src="./images/counselling1.jpg" alt="counseling">
+                </div>
+                <div class="event-card">
+                    <h3>Fitness & Nutrition</h3>
+                    <p>Holistic approach to physical and mental health</p>
+                    <a href="./volunteer_page.html#fitness">Get Started →</a>
+                    <img src="./images/exercise1.jpg" alt="excercise image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST04.html#content">Page Editor: Vishmi Fernando</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+    </footer>
+
+    <button onclick="scrollToTop()" class="top-btn" aria-label="Scroll to top">↑</button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        window.onscroll = function() {
+            const btn = document.querySelector('.top-btn');
+            btn.style.display = window.scrollY > 20 ? "flex" : "none";
+        };
+
+
+        function showQuiz() {
+            document.getElementById('quiz').style.display = 'block';
+        }
+        function calculateStress() {
+            let total = 0;
+            for (let i = 1; i <= 6; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    total += parseInt(selected.value);
+                }
+            }
+            let stressPercentage = (total / 60) * 100;
+            document.getElementById('result').innerText = `Your estimated stress level: ${Math.round(stressPercentage)}%`;
+        }
+        document.getElementById('mood-selector').addEventListener('change', function() {
+    const mood = this.value;
+    const moodTips = document.getElementById('mood-tips');
+
+    let message = '';
+    let link = '';
+
+    switch (mood) {
+        case 'happy':
+            message = 'Keep smiling! Do something kind for someone today to spread your happiness.';
+            link = `<a href="#happy">Learn More</a>`;
+            break;
+        case 'sad':
+            message = 'It’s okay to feel down sometimes. Try listening to your favorite music or talking to a friend.';
+            link = `<a href="#sad">Learn More</a>`;
+            break;
+        case 'stressed':
+            message = 'Take a deep breath. Try some mindfulness exercises or take a short walk to clear your mind.';
+            link = `<a href="#stressed">Learn More</a>`;
+            break;
+        case 'angry':
+            message = 'Pause and reflect. Try some relaxation techniques like deep breathing or journaling.';
+            link = `<a href="#angry">Learn More</a>`;
+            break;
+        case 'neutral':
+            message = 'It’s a calm day. Take this opportunity to enjoy a moment of peace and do something you enjoy.';
+            link = `<a href="#neutral">Learn More</a>`;
+            break;
+        default:
+            message = 'Choose your mood for personalized tips!';
+            link = '';
+    }
+
+    moodTips.innerHTML = `<p>${message}</p> ${link}`;
+});
+function toggleDetails(id) {
+        const details = document.getElementById(id);
+        const button = document.getElementById(id + '-btn');
+        
+        if (details.style.display === 'none') {
+            details.style.display = 'block';
+            button.innerText = 'See Less';
+        } else {
+            details.style.display = 'none';
+            button.innerText = 'See More';
+        }
+    }        
+    </script>
+</body>
+</html>

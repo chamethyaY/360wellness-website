@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="./global.css">
+  <style>
+  
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("eric-han-3rx5i1gv7aA-unsplash.jpg"); 
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #144235;
+  text-align: center;
+  font-size: large;
+  
+}
+.form{
+  background: linear-gradient(135deg, #007F5B, #C0C0C0, #FFFFFF, #B2BEB5);
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+
+}
+
+.container {
+  margin-top: 0px;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(197, 199, 195, 0.9); 
+/* Softer neutral tone */
+  border-radius: 20px;
+  border: 2px solid #007F5B;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  
+}
+
+
+form {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+fieldset {
+  border: 2px solid rgba(20, 66, 53, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 4px 15px rgba(0, 127, 91, 0.2);
+  padding: 20px;
+  background-color: #C5C7C3;
+  text-align: left;
+  position: relative;
+}
+
+
+legend {
+  background-color: #2A4B33;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+}
+
+h1{
+  font-size:40px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #422E26;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  border: 2px solid #007F5B;
+  box-shadow: 0px 4px 10px rgba(0, 127, 91, 0.2);
+  color: #144235;
+  transition: all 0.3s ease;
+}
+
+/* Input Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border: 2px solid #5CB85C;
+  background-color: #f4fdf4;
+  box-shadow: 0px 4px 15px rgba(92, 184, 92, 0.4);
+  outline: none;
+}
+
+
+.checkbox-group,
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox-group input,
+.radio-group input {
+  margin-right: 5px;
+}
+
+
+.stars {
+  font-size: large;
+  color: #555353;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.stars:hover{
+  color:#422E26;
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+button {
+  font-family: 'Calibri', sans-serif;
+  font-size: large;
+  background-color: #007F5B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #5CB85C;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(92, 184, 92, 0.3);
+}
+
+.interest {
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  overflow-y: auto;
+  border: 2px solid #007F5B;
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+  color: #144235;
+}
+
+.interest option {
+  padding: 5px;
+}
+
+.scrollable-list {
+  border: 2px solid #007F5B;
+  background: #C5C7C3;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 120px; /* Controls scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
+  width: 100%;
+  
+}
+
+.scrollable-list label {
+  display: block;
+  padding: 5px;
+  font-size: 16px;
+  color: #144235;
+  cursor: pointer;
+  font-size:19px;
+}
+
+.scrollable-list input {
+  margin-right: 8px;
+}
+
+.scrollable-list label:hover {
+  background: #007F5B;
+  color: white;
+  border-radius: 3px;
+}
+
+/* Scroll to top button styles */
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #5CB85C;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+}
+
+.top-button:hover {
+  background-color: #007F5B;
+  transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+      width: 90%;
+  }
+  
+  form {
+      max-width: 100%;
+  }
+
+  .button-group {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+  </style>
+
+
+</head>
+<body>
+        <header>
+
+          <div class="header">
+            <a href="./homepage.html">
+                <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+            </a>
+            <a href="./user_profile.html">
+                <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+            </a>
+        </div>
+            
+        </header>
+        <div class="navbar">
+            <nav id="navbar">
+                <ul >
+                  <li><a href="./homepage.html"> Home</a></li>
+                  <li><a href="./volunteer_page.html"> Join Us</a></li>
+                  <li><a href="./table.html">Projects</a></li>
+                  <li><a href="./feedback.html">Feedback</a></li>
+                  <li><a href="./sitemap.html">Site Map</a></li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle">More</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="./Team.html">Our Team</a></li>
+                          <li><a href="./content.html">Contents</a></li>
+                          <li><a href="./validation_ST01.html">Validation Page</a></li>
+                      </ul>
+                  </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="form">
+
+        
+          <div class="container">
+            <h1>Feedback Form</h1>
+
+          
+           <form id="feedbackForm">
+              <fieldset>
+                <legend>Personal Details</legend>
+                <br>
+                <div class="form-group">
+                  <label for="fname">Full Name:</label>
+                  <input type="text" id="fname" name="fname" required title="Please enter your full name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required title="Enter a valid email address">
+                </div>
+                <div class="form-group">
+                  <label for="tel">Telephone Number:</label>
+                  <input type="tel" id="tel" name="tel" required title="Enter a valid phone number">
+                </div>
+                <div class="form-group">
+                  <label for="address">Address:</label>
+                  <textarea id="address" name="address" rows="4" maxlength="500" placeholder="Enter your address here" required></textarea>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>Feedback &amp; Comments</legend>
+                <br>
+                <div class="form-group">
+                  <label for="comment">Comments:</label>
+                  <textarea id="comment" name="comment" rows="7" maxlength="500" placeholder="Your feedback..." required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="reach">How did you hear about us?</label>
+                  <select id="reach" name="reach">
+                    <option value="socialmedia" selected>Social Media</option>
+                    <option value="website">Website</option>
+                    <option value="event">Event</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Which health &amp; wellness activities interest you?</label>
+                  <div class="scrollable-list">
+                    <label><input type="checkbox" name="interest" value="blood donation program"> Blood Donation Program</label>
+                    <label><input type="checkbox" name="interest" value="mental health awareness campaigns"> Mental Health Awareness Campaigns</label>
+                    <label><input type="checkbox" name="interest" value="fitness & wellness programs"> Fitness & Wellness Programs</label>
+                    <label><input type="checkbox" name="interest" value="healthy eating workshops"> Healthy Eating Workshops</label>
+                    <label><input type="checkbox" name="interest" value="yoga & meditation sessions"> Yoga & Meditation Sessions</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Preferences &amp; Options</legend>
+                <br>
+                <div class="form-group">
+                  <label>Would you like to volunteer for wellness programs?</label>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="blood" name="volunteer" value="blood" class="volunteer-option">
+                    <label for="blood">Yes, Blood Donation Program</label>
+                  </div>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="mental" name="volunteer" value="mental" class="volunteer-option">
+                    <label for="mental">Yes, Mental Health Awareness Campaigns</label>
+                  </div>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="fitness" name="volunteer" value="fitness" class="volunteer-option">
+                    <label for="fitness">Yes, Fitness &amp; Wellness Programs</label>
+                  </div>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="no" name="volunteer" value="donate" class="exclusive-option">
+                    <label for="no">No, but I'd like to donate</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Would you like to volunteer for our wellness initiatives?</label>
+                  <div class="radio-group">
+                    <input type="radio" id="yes" name="conservation" value="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="noVol" name="conservation" value="no">
+                    <label for="noVol">No</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Submission Details</legend>
+                <br>
+                <div class="form-group">
+                  <label for="date">Preferred Date for Follow-up</label>
+                  <input type="date" id="date" name="date">
+                </div>
+                <div class="form-group">
+                  <label for="time">Preferred Time for Follow-up</label>
+                  <input type="time" id="time" name="time">
+                </div>
+                <div class="form-group">
+                  <label for="document">Upload Supporting Documents (Optional)</label>
+                  <input type="file" id="document" name="document">
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Rate Your Experience</legend>
+                <br>
+                <div class="form-group">
+                  <label>How would you rate our initiative?</label>
+                  <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="button-group">
+                <button type="reset" name="Reset" value="Reset">Reset</button>
+                <button type="submit" name="submit" value="submit">Submit</button>
+            </div>
+            </form>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              let normalOptions = document.querySelectorAll(".volunteer-option");
+              let exclusiveOption = document.querySelector(".exclusive-option");
+
+              exclusiveOption.addEventListener("change", function() {
+                if (exclusiveOption.checked) {
+                  normalOptions.forEach(option => option.checked = false);
+                }
+              });
+
+              normalOptions.forEach(option => {
+                option.addEventListener("change", function() {
+                  if (this.checked) {
+                    exclusiveOption.checked = false;
+                  }
+                });
+              });
+
+              const stars = document.querySelectorAll('.stars span');
+              const starsContainer = document.querySelector('.stars');
+              const ratingInput = document.createElement('input');
+              ratingInput.type = 'hidden';
+              ratingInput.name = 'rating';
+              starsContainer.appendChild(ratingInput);
+
+              stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                  let rating = index + 1;
+                  ratingInput.value = rating;
+                  updateStars(rating);
+                });
+                star.addEventListener('mouseover', function() {
+                  updateStars(index + 1);
+                });
+                star.addEventListener('mouseout', function() {
+                  updateStars(ratingInput.value);
+                });
+              });
+
+              function updateStars(rating) {
+                stars.forEach((star, index) => {
+                  star.style.color = index < rating ? '#f39c12' : '#ccc';
+                });
+              }
+            });
+
+            // Select the form element
+            const feedbackForm = document.getElementById('feedbackForm');
+
+            // submit form
+            feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Stop default form submission
+                alert('Thank you for your feedback!🤍'); // Alert the user
+                feedbackForm.reset(); // Automatically reset/clear the form
+            });
+
+          </script>
+    </div>
+    <a href="#top" class="top-button">&#8593;</a>
+
+        <footer>
+          <div>
+              <img src="./images/footer_logo.png" alt="footer logo">
+              <div class="Editor">
+                  <a href="./pageEditor_ST03.html#feedback">Page Editor: Chamethya Yasodie</a>
+              </div>
+              
+          </div>
+          <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+        </footer>  
+</body>
+</html>

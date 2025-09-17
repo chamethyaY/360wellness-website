@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student1 - Nethmi Athukorala</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+
+        <header class="top_header">
+            <div class="header">
+                <a href="./homepage.html">
+                    <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+                </a>
+                <a href="./user_profile.html">
+                    <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+                </a>
+            </div>
+        </header>
+        
+    <div class="navbar">
+        <nav id="navbar">
+            <ul>
+                <li><a href="./homepage.html"> Home</a></li>
+                <li><a href="./volunteer_page.html"> Join Us</a></li>
+                <li><a href="./table.html">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./sitemap.html">Site Map</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Team.html">Our Team</a></li>
+                        <li><a href="./content.html">Contents</a></li>
+                        <li><a href="./validation_ST01.html">Validation Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="stud">
+        <h2>Nethmi Athukorala, Student 01 </h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+            <section>
+                <h2 id="splash_screen">Splash Screen</h2>
+                
+                <h3>Technical Description</h3>
+                <ul class="points">
+                    <li>
+                        <h3>HTML Techniques Used:</h3>
+                        <ul class="inner_points">
+                            <li>Used basic semantic elements such as &lt;body&gt;, &lt;div&gt;, &lt;h1&gt;, &lt;pre&gt;, &lt;ul&gt;, &lt;li&gt;, and &lt;button&gt; to organize content logically and clearly.</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>CSS Techniques Used:</h3>
+                        <ol class="inner_points">
+                            <li>
+                                <b>Background Styling:</b>
+                                <ul>
+                                    <li>The .splash_screen class uses a full-screen background image with background-size: cover to ensure it fits the entire screen and maintains its aspect ratio.</li>
+                                    <li>The background-attachment: fixed keeps the background image static during scrolling.</li>
+                                    <li>The background image was chosen to represent health and wellness, connecting with nature. It visually reinforces the theme of the website, creating an immersive and calming atmosphere that aligns with the goal of promoting a healthier, happier life.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Flexbox Layout:</b>
+                                <ul>
+                                    <li>Flexbox is used in the .splash_screen class to center content both vertically and horizontally (justify-content: center, align-items: center).</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Button Styling:</b>
+                                <ul>
+                                    <li>The button (.page_editor_btn) is styled with padding, border-radius, and custom hover effects to make it visually appealing.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Loader Styling:</b>
+                                <ul>
+                                    <li>@keyframes are used for animations like pulse and growth to give the loader dynamic movement.</li>
+                                    <li>
+                                        <b>Pulse Animation:</b> The pulsing effect represents a heartbeat, symbolizing vitality, wellness, and an active lifestyle. This aligns with the theme of promoting good health and well-being.
+                                    </li>
+                                    <li>
+                                        <b>Growth Animation:</b> The gradual expansion effect symbolizes personal growth, progress, and continuous improvement in one's health journey. It reflects the idea of developing better habits for a healthier life.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Text Animation:</b>
+                                <ul>
+                                    <li>The .loading_text is animated with the fade-in-out keyframes to create a blinking effect for the loading message.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Transition:</b>
+                                <ul>
+                                    <li>Transitions are used for smooth opacity changes when fading out the splash screen (transition: opacity 0.5s ease-out).</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li>
+                        <h3>JavaScript Techniques Used:</h3>
+                        <ol class="inner_points">
+                            <li>
+                                <b>Page Redirection:</b>
+                                <ul>
+                                    <li>The onclick event in the button triggers a page redirection using location.href to navigate to the page_editor1.html page.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Timeout for Splash Screen:</b>
+                                <ul>
+                                    <li>A setTimeout function is used to delay actions (e.g., hiding the splash screen) for a set period.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Element Manipulation:</b>
+                                <ul>
+                                    <li>The splash screen's opacity is adjusted using JavaScript to create a fade-out effect (style.transition, style.opacity).</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Chained Timeouts for Redirection:</b>
+                                <ul>
+                                    <li>A setTimeout is used to ensure the splash screen fades out completely before redirecting to another page (window.location.href = "./homepage.html").</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <h3>Accessibility</h3>
+                <ul class="inner_points">
+                    <li><strong>Semantic HTML Elements:</strong> Proper usage of &lt;h1&gt;, &lt;p&gt;, and &lt;ul&gt; helps screen readers navigate the content effectively.</li>
+                    <li><strong>Proper Text Contrast:</strong> The text colors contrast well with the background to ensure readability for users with visual impairments.</li>
+                    <li><strong>Animations with Minimal Distraction:</strong> The animations are smooth and do not flash rapidly, preventing discomfort for users with motion sensitivity.</li>
+                </ul>
+           
+                    <h3>Link to the validation page</h3>
+                        <p><a href="./validation_ST01.html#splashVal">link to the validation page</a></p> 
+
+                    <h3>Link to the page</h3>
+                        <p><a href="./splash_screen.html">link to the User profile page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="volunteer">Volunteer Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li>
+                            <h3>HTML Techniques Used:</h3>
+                            <ol class="inner_points">
+                                <li>
+                                    <b>Semantic Structure:</b>
+                                    <ul>
+                                        <li>Used &lt;section&gt;, &lt;div&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;,&lt;li&gt;, and &lt;button&gt; elements to organize content logically.</li>
+                                        <li>&lt;h2&gt; is used for the main heading, ensuring accessibility and proper document structure</li>
+                                        <li>&lt;dialog&gt; is used for the pop-up modal that provides additional details about the volunteer opportunity.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Dropdown Selection:</b>
+                                    <ul>
+                                        <li>&lt;select&gt; and &lt;option&gt; triggers the selectCountry() JavaScript function to dynamically update displayed content.</li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Card-Based Volunteer Listings:</b>
+                                    <ul>
+                                        <li>&lt;div class="volunteer"&gt;sections are used to group each volunteer opportunity
+                                        </li>
+                                        <li>&lt;h3&gt; headings inside the volunteer cards provide a brief description of each opportunity.</li>
+                                        <li>&lt;img&gt;elements are icons which represent key details, such as event date, time, duration, and cost.</li>
+                                        <li>&lt;span&gt; elements hold textual details to accompany icons for better visual representation.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Dialog Pop-up for More Information:</b>
+                                    <ul>
+                                        <li>&lt;dialog&gt; is used to display additional details about each opportunity without navigating to a new page.
+                                        </li>
+                                        <li>The &lt;video&gt; tag inside the dialog showcases a promotional video related to the volunteer opportunity.</li>
+                                        <li>The &lt;table&gt;element organizes structured information (e.g., organization name, start date, contact details).</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Navigation & Interaction Elements:</b>
+                                    <ul>
+                                        <li>&lt;button&gt; elements allow interaction, such as opening the modal (onclick="document.getElementById('explore_v1').showModal();").
+                                        </li>
+                                        <li>TAn apply link (&lt;a&gt; tag) directs users to an external Google Form for volunteer registration.</li>
+                                        <li>A close button (&lt;button class="close_button"&gt;Close&lt;button&gt;)enables users to exit the modal.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <h3>CSS Techniques Used:</h3>
+                            <ol class="inner_points">
+                                <li>
+                                    <b>Flexbox:</b>
+                                    <ul>
+                                        <li>
+                                            .top_header, .header, .navbar, .buttons, .dialog_container, .explore_content, .review_content, and .info_item use display: flex; to align and distribute elements efficiently.
+                                        </li>
+                                        <li>
+                                            The .v_content section also utilizes flex-wrap: wrap; to adapt content responsively.
+                                        </li>
+                                        <li>
+                                            <li>.dropdown-menu uses position: absolute; to ensure it appears below the dropdown button.</li>
+                                            <li>.dropdown::after is positioned absolutely to create a custom dropdown arrow.</li>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Styling & Aesthetics:</b>
+                                    <ul>
+                                        <li>
+                                            .volunteer:hover has transform: translateY(-10px); to create a lifting effect when hovered.
+                                        </li>
+                                        <li>
+                                            .info_item:hover { transform: translateX(10px); } adds a slight movement to text elements when hovered.
+                                        </li>
+                                        <li>The page follows an earthy and natural color scheme for a harmonious design.</li>
+                                    </ul>
+                                    
+                                </li>
+                                <li>
+                                    <b>Animation & Transitions</b>
+                                    <ul>
+                                        <li>
+                                            Fade-in effect: Used on multiple elements (.volunteer, #volunteer_heading) with animation: fadeInUp 1s ease;.
+                                        </li>
+                                        <li>
+                                            .volunteer:nth-child(2), .volunteer:nth-child(3), .volunteer:nth-child(4) use animation-delay for staggered effects.                                        
+                                        </li>
+                                        <li><b>Sliding Gradient Effect:</b>
+                                            .v_head::before has an animation that moves a gradient overlay
+                                             when hovered (left: 100%;).
+                                        </li>
+                                    </ul>
+                                    
+                                </li>
+                                <li>
+                                    <b>Tables & Lists:</b>
+                                    <ul>
+                                        <li>Hovering on table rows (.volunteer_table tr:hover) changes the background color for better readability.
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                               
+                            </ol>
+                        </li>
+                    </ul>
+
+                    <li><h3>JavaScript Techniques Used:</h3>
+                        <ol class="inner_points">
+                            <li>
+                                <b>Event Handling & DOM Manipulation:</b>
+                                <ul>
+                                    <li>
+                                        The selectCountry() function retrieves the selected country from the dropdown (document.getElementById("selectCountry").value).                                    </li>
+                                    <li>
+                                        It loops through all elements with the .volunteer class and compares their data-country attribute to the selected value.                                    </li>
+                                    <li>Conditional Display Logic:
+                                        <li>If "all" is selected, all programs remain visible (program.style.display = "block").</li>
+                                        <li>Otherwise, it hides (display: none;) programs that don’t match</li>
+                                    </li>
+                                    <li>
+                                        Uses forEach() to efficiently iterate over multiple .volunteer elements.                                    <li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Star Rating System:</b>
+                                <ul>
+                                    <li>
+                                        The script selects all &lt;span&gt; elements inside .stars using document.querySelectorAll('.stars span').                                    </li>
+                                    <li>
+                                        When a star is clicked, it loops through all stars and toggles the "active" class based on the clicked index (i <= index).                                    </li>
+                                    <li>This ensures that all stars up to the clicked one are highlighted.</li>
+                                </ul>
+                                
+                            </li>
+                            <li>
+                                <b>Show/Hide Additional Reviews ("See More"):</b>
+                                <ul>
+                                    <li>
+                                        Selects .hidden_reviews, checking its current display value.
+                                    </li>
+                                    <li>
+                                        If it's hidden ("" or "none"), it changes display to "flex" (preserving the layout).                                    </li>
+                                    <li>If it's visible, it hides it again (display = "none").</li>
+                                    <li>Dynamically updates button text between "See More" and "See Less".</li>
+                                </ul>
+                                
+                            </li>
+                            <li>
+                                <b>Tables & Lists:</b>
+                                <ul>
+                                    <li>Hovering on table rows (.volunteer_table tr:hover) changes the background color for better readability.
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                           
+                        </ol>
+                    </li>
+
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Country Selection Dropdown</strong>: Implemented a dropdown filter (selectCountry) to allow users to easily filter volunteer programs by country.
+                        <li><strong>Star Rating System</strong>: 
+                            <ul>
+                                <li>Users can provide feedback using an interactive star rating system.</li> 
+                                <li>Stars change appearance dynamically based on selection, improving visual feedback.</li>
+                            </ul></li>
+                        <li><strong>Explore Section Dialog</strong>: The "Close" button (close_explore) enables users to close the pop-up dialog.</li>
+                        <li><strong>"See More" Button for Reviews</strong>
+                            <ul>
+                                <li>Users can expand hidden reviews by clicking the "See More" button.</li>
+                                <li>Uses display: flex to ensure proper alignment of additional reviews.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="./validation_ST01.html#volunteerVal">link to the validation page</a></p> 
+
+                    <h3>Link to the page</h3>
+                        <p><a href="./volunteer_page.html">link to the sitemap page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                    <ul class="points">
+                        <li>
+                            <h3>HTML Techniques Used:</h3>
+                            <ol class="inner_points">
+                                <li><b> Table of Contents with Anchor Links:</b>
+                                    <ul>
+                                        <li>The &lt;button&gt;with onclick="toggleTOC()" allows users to show/hide the Table of Contents dynamically.</li>
+                                        <li>The <div id="table-of-contents"> contains anchor (&lt;a&gt;) links that navigate users to different sections of the page.</li>
+                                        <li>Technique Used: Internal page linking (href="#section1") for smooth navigation.</li>                                   
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Interactive "More Info" Buttons for Expanding Content:</b>
+                                    <ul>
+                                        <li>&lt;div class="hidden_content"&gt; contains additional details that are initially hidden.</li>
+                                        <li>&lt;button class="more_info"&gt;More Info&lt;/button&gt;</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Quiz Section with Dynamic Content</b>
+                                    <ul>
+                                        <li>&lt;div id="quiz"&gt;dynamically loads quiz questions.
+                                        </li>
+                                        <li>&lt;p id="question-counter"&gt; tracks question progress.</li>
+                                        <li>&lt;img&gt;elements are icons which represent key details, such as event date, time, duration, and cost.</li>
+                                        <li>&lt;span&gt; elements hold textual details to accompany icons for better visual representation.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>"Back to Top" Button for Easy Navigation:</b>
+                                    <ul>
+                                        <li>&lt;button title="Go to Top" id="back-to-top" onclick="scrollToTop()"&gt; &#x2B06; &lt;/button&gt; enables users to quickly return to the top of the page.
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                            </ol>
+                            <h3>JavaScript Techniques Used:</h3>
+                            <ol class="inner_points">
+                                <li><b> Smooth Scrolling:</b>
+                                    <ul>
+                                        <li>The scrollToTop() function enables smooth scrolling to the top of the page when triggered.</li>
+                                        <li>The window.onscroll event displays a "back to top" button when the user scrolls down.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Image Slider:</b>
+                                    <ul>
+                                        <li>The code uses a setInterval function to cycle through images in a slider, automatically changing the displayed image every 3 seconds.</li>
+                                        <li>The slider uses CSS transforms to shift images horizontally based on the currentIndex.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Dynamic Content Display:</b>
+                                    <ul>
+                                        <li>A simple quiz with multiple choice questions. The quiz tracks the score and displays feedback based on the user's performance.
+                                        </li>
+                                        <li>It utilizes event listeners to handle the selection of answers, updating the score and showing the next question or results
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Quiz Functionality:</b>
+                                    <ul>
+                                        <li>&lt;button title="Go to Top" id="back-to-top" onclick="scrollToTop()"&gt; &#x2B06; &lt;/button&gt; enables users to quickly return to the top of the page.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Table of Contents Toggle:</b>
+                                    <ul>
+                                        <li>A function (toggleTOC) to show or hide the table of contents when clicked.
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+
+                    </ul>
+                    <h3>Accessibility</h3>
+                    <ul class="inner_points" >
+                        <li><strong>Keyboard Navigation</strong>: Ensure interactive elements (buttons, links) are focusable and accessible via keyboard (e.g., use tabindex="0" for navigation)</li>
+                        <li><strong>ARIA Labels:</strong>: Use aria-label and role attributes for buttons and interactive elements for screen readers.</li>
+                        <li><strong>Alternative Text for Images</strong>: Provide descriptive alt attributes for all images.</li>
+                        <li><strong>Accessible Forms and Buttons</strong>: Ensure buttons are correctly labeled and usable via keyboard.</li>
+                        <li><strong>Color Contrast: </strong>:Ensure sufficient contrast between text and background for readability.</li>
+
+                    </ul>
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="./validation_ST01.html#contentVal">link to the validation page</a>
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="./content_page1.css">link to the Content01 page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <ul class="points">
+                    <li><h3>Challenges Encountered:</h3></li>
+                    <ul class="inner_points" >
+                    
+                        <li><strong>Responsive Design</strong> – Ensuring the website layout adapts well to various screen sizes, especially for image sliders and content visibility.</li>
+                        <li><strong>Accessibility Concerns</strong> – Addressing the need to make interactive elements accessible to all users, especially those using screen readers or keyboard navigation.</li>
+                        <li><strong>Compatibility Issues</strong> – Facing challenges with ensuring that the code works seamlessly across different browsers or devices.
+                        </li>
+                        <li><strong>Performance Optimization</strong> – Managing large images in the slider without affecting page load time or user experience.
+                        </li>
+                        <li><strong>User Interaction</strong> – Ensuring the interactive elements (like quizzes and content toggles) function as expected, especially with JavaScript.
+                        </li>
+                      
+                                                        
+                    </ul>
+                    <li><h3>Lessons Learned:</h3></li>
+                    <ul class="inner_points">
+                        <li><strong>CSS and JS Integration</strong> – Learning how to efficiently integrate CSS and JavaScript to create smooth transitions and interactivity.
+                        </li>
+                        <li><strong>Importance of Testing</strong> – Regularly testing across different browsers and devices to ensure consistent behavior.
+                        </li>
+                        <li><strong>Prioritizing Accessibility</strong> – Recognizing the need to implement accessible features (e.g., ARIA labels, keyboard navigation) for inclusivity.
+                        </li>
+                        <li><strong>Optimizing User Experience</strong> – The value of improving user experience by reducing clutter and providing clear, actionable feedback (e.g., in quizzes and content toggles).
+                        </li>
+                        <li><strong>Collaboration and Iteration</strong> – Understanding the importance of team collaboration and iterative testing for refining features based on user feedback.
+                        </li>
+                        
+                    </ul>
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                <ul class="points">
+                    <li><h3>Accessibility Compliance</h3></li>
+                    <ul class="inner_points" >
+                    
+                        <li>The pages follow WCAG (Web Content Accessibility Guidelines) by including proper alt attributes for images, ensuring visually
+                             impaired users can access content through screen readers.</li>
+                        <li>HTML is structured correctly, using semantic tags such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, and &lt;footer&gt; to improve readability and assistive technology support.</li>
+                        <li>Contrast and font sizes are optimized for readability, making the site more inclusive.</li>
+                                                        
+                    </ul>
+                    <li><h3>Security Compliance</h3></li>
+                    <ul class="inner_points">
+                        <li>No inline JavaScript that could lead to security vulnerabilities.</li>
+                        <li>External links are reviewed to ensure they point to safe and relevant sources.</li>
+                    </ul>
+                    <li><h3>Content Appropriateness and Ethical Use</h3></li>
+                    <ul class="inner_points" >
+                        <li>The site contains nformative content, aligning with Janet’s guidelines on appropriate material.</li>
+                        <li>No offensive, misleading, or unauthorized material is published, ensuring compliance with acceptable use policies.</li>
+                    </ul>
+
+                    <li><h3>Technical Standards Compliance</h3></li>
+                    <ul class="inner_points">
+                        <li>The pages are validated using W3C HTML and CSS validators, ensuring clean and error-free code.</li>
+                        <li>The site is optimized for cross-browser compatibility, ensuring proper rendering on different devices and browsers.</li>
+                    </ul>
+                </ul>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+
+                    <ul class="ref">
+                        <li>Shvets, A. (2020, October 12). Women sitting on grey sofa · Free Stock photo. Pexels. <a href="https://www.pexels.com/photo/women-sitting-on-grey-sofa-5257319/">https://www.pexels.com/photo/women-sitting-on-grey-sofa-5257319/</a></li>
+                        <li>Project, R. S. (2021, January 19). Woman doing yoga in a gym · Free stock photo. Pexels. <a href="https://www.pexels.com/photo/woman-doing-yoga-in-a-gym-6539859/">https://www.pexels.com/photo/woman-doing-yoga-in-a-gym-6539859/</a></li>
+                        <li>Altın, İ. (2025, February 26). Cozy Night Lamp with Books and Statue Decor · Free Stock Photo. Pexels. <a href="https://www.pexels.com/photo/cozy-night-lamp-with-books-and-statue-decor-30877265/">https://www.pexels.com/photo/cozy-night-lamp-with-books-and-statue-decor-30877265/</a> </li>
+                        <li>Production, S. (2021, July 26). Person in black blazer holding newspaper · Free stock photo. Pexels. <a href="https://www.pexels.com/photo/person-in-black-blazer-holding-newspaper-8899560/">https://www.pexels.com/photo/person-in-black-blazer-holding-newspaper-8899560/</a></li>
+                        <li>Nilov, M. (2021, April 13). Elderly man and woman doing leg stretching exercise on yoga mat · Free Stock photo. Pexels. <a href="https://www.pexels.com/photo/elderly-man-and-woman-doing-leg-stretching-exercise-on-yoga-mat-7500321/">https://www.pexels.com/photo/elderly-man-and-woman-doing-leg-stretching-exercise-on-yoga-mat-7500321/</a></li>
+                        <li>Afif, T. (n.d.). The Progress CSS Loaders collection. <a href="https://css-loaders.com/progress/">https://css-loaders.com/progress/</a></li>
+                        <li>Danilyuk, P. (2021, July 14). A girl learning how to ride a bicycle Free stock video footage, Royalty-Free 4K & HD video clip [Video]. Pexels. <a href="https://www.pexels.com/video/a-girl-learning-how-to-ride-a-bicycle-8747877/">https://www.pexels.com/video/a-girl-learning-how-to-ride-a-bicycle-8747877/</a></li>
+                        <li>Shkraba, A. (2021, April 11). Woman examining an elderly man · Free stock video [Video]. Pexels. <a href="https://www.pexels.com/video/woman-examining-an-elderly-man-7475246/">https://www.pexels.com/video/woman-examining-an-elderly-man-7475246/</a></li>
+                        <li>Malik, K. (2021, August 2). A woman meditating outdoors Free stock video footage, Royalty-Free 4K & HD video clip [Video]. Pexels. <a href="https://www.pexels.com/video/a-woman-meditating-outdoors-9034625/">https://www.pexels.com/video/a-woman-meditating-outdoors-9034625/</a></li>
+                        <li>Project, R. S. (2021, June 19). Women in activewear running together in an urban area · Free stock video [Video]. Pexels. <a href="https://www.pexels.com/video/women-in-activewear-running-together-in-an-urban-area-8402121/">https://www.pexels.com/video/women-in-activewear-running-together-in-an-urban-area-8402121/</a></li>
+                        <li>Project, R. S. (2020, December 8). Male Doctor talking · Free stock video [Video]. Pexels. <a href="https://www.pexels.com/video/male-doctor-talking-6130557/">https://www.pexels.com/video/male-doctor-talking-6130557/</a></li>
+                        <li>Samkov, I. (2021, June 25). Chemist looking at a blood inside a test tube · Free stock video [Video]. Pexels. <a href="https://www.pexels.com/video/chemist-looking-at-a-blood-inside-a-test-tube-8490415/">https://www.pexels.com/video/chemist-looking-at-a-blood-inside-a-test-tube-8490415/</a></li>
+                        <li>W3Schools (2025) HTML, CSS, and JavaScript Tutorials. Available at: <a href="https://www.w3schools.com">https://www.w3schools.com</a> (Accessed: March 2025).</i></li>
+                        <li>The W3C Markup Validation service (2025). <a href="https://validator.w3.org/"></a> https://validator.w3.org/.</li> 
+                        <li>Betheme - The Biggest WordPress & WooCommerce Theme with 700+ pre-built websites (2025).<a href="https://muffingroup.com/betheme/">https://muffingroup.com/betheme/</a></li>
+                        <li>Healthy Aging in Sri Lanka: Stay Strong, Stay Active (2024 Guide) (no date).<a href="https://www.nestlehealthscience.lk/blog-articles/healthy-aging-in-sri-lanka">https://www.nestlehealthscience.lk/blog-articles/healthy-aging-in-sri-lanka</a></li>
+                        <li>The W3C Markup Validation service (2025). <a href="https://validator.w3.org/"> https://validator.w3.org/.</a></li>
+           
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                    <ul> 
+                        <li><a href="#splash">Splash page</a></li>
+                        <li><a href="#volunteer">Volunteer page</a></li>
+                        <li><a href="#content">Content page</a></li>
+                    </ul>
+                <li>Student 2</li>
+                    <ul>
+                        <li><a href="./pageEditor_ST02.html#home_page">Home page </a></li>
+                        <li><a href="./pageEditor_ST02.html#table">Table page</a></li>
+                        <li><a href="./pageEditor_ST02.html#content">Content page</a></li>
+                    </ul>
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="./pageEditor_ST03.html#feedback">Feedback page</a> </li>
+                        <li><a href="./pageEditor_ST03.html#team">Team page</a></li>
+                        <li><a href="./pageEditor_ST03.html#content">Content page</a></li>
+                    </ul>
+                <li>Student 4</li>
+                    <ul>
+                        <li><a href="./pageEditor_ST04.html#user-profile">Profile page </a></li>
+                        <li><a href="./pageEditor_ST04.html#sitemap">Sitemap page</a></li>
+                        <li><a href="./pageEditor_ST04.html#content">Content page</a></li>
+                    </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST01.html">Page Editor: Nethmi Athukorala</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>   
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>volunteer page</title>
+    <link rel="stylesheet" href="./global.css">
+
+    <style>
+        .volunteer_dropdown {
+            width: 300px;
+            margin: 0 auto 40px;
+            position: relative;
+            animation: fadeIn 1s ease;
+        }
+        #selectCountry {
+            color:#2A4B33;
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            background-color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            
+        }
+        .volunteer_dropdown select {
+            text-align: center;
+            margin-right: 30px;
+        }
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+
+        #selectCountry:hover , #selectCountry:focus{
+            border-color:#2A4B33;
+            box-shadow: 0 0 10px rgba(42, 77, 47, 0.733);
+            outline: none;
+            color:#2A4B33;
+
+        }
+        .volunteer_dropdown::after {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            top: 25px;
+            color:#2A4B33;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        .volunteer_dropdown:hover::after {
+            transform: translateY(3px);
+        }
+
+
+        #volunteer_heading {
+            color: #3f200acc;
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 40px;
+            position: relative;
+            font-size: 30px;
+            padding-bottom: 15px;
+            animation: fadeInUp 1s ease;
+        }
+
+        #volunteer_heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, #ddc1a0, #3f200acc);
+            border-radius: 2px;
+        }
+
+        option:hover {
+            background-color: #6F7149;
+        }
+        .volunteer{
+            background-color:#C5C7C3 ;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.158);
+            margin-bottom: 40px;
+            overflow: hidden;
+            /*height: 60%;
+            width: 100%;*/
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+        
+        }
+
+        .volunteer:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .volunteer:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .volunteer:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .volunteer:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .v_head{
+            background-color: #2A4B33;
+            padding: 18px 25px;
+            position: relative;
+            overflow: hidden;
+            font-size: 25px;
+            color: #ffffff;
+            text-align: left;
+            margin: 0;
+        }
+
+        .v_head::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(129, 101, 101, 0.2), transparent);
+            transition: all 0.8s ease;
+        }
+        .volunteer:hover .v_head::before {
+            left: 100%;
+        }
+
+        .v_content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .v_img{
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+            object-fit: cover;
+            
+        }
+
+
+        .volunteer:hover .v_img {
+            transform: scale(1.03);
+        }
+
+
+        .explore_head{
+            padding-top: 27px;
+            padding-left: 30px;
+            color:#35271D ;
+            text-align: left;
+        }
+        .content, .v_content{
+            margin:20px ;
+        }
+
+        .info {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .info_item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #35271D;
+            transition: transform 0.3s ease;   
+        }
+
+        .info_item:hover {
+            transform: translateX(10px);
+        }
+
+        .info_item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+
+        }
+
+        .info_item span {
+            font-size: 17px;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .explore_button,.apply_button , .close_button{
+            padding: 12px 60px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .explore_button, .close_button {
+            background-color: white;
+            color: #2A4B33;
+            border: 2px solid #144235;
+        }
+        .apply_button {
+            text-decoration: none;
+            background-color: #2A4B33;
+            color: white;
+        }
+
+        .explore_button:hover, .apply_button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.158);
+        }
+
+        .explore_button::after, .apply_button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .explore_button:hover::after, .apply_button:hover::after {
+            left: 100%;
+        }
+
+        dialog {
+            visibility: hidden;
+            background-color:#C5C7C3;
+            border: none;
+            border-radius: 15px;
+            padding: 0;
+            width: 90%;
+            height: fit-content;
+            max-width: 1000px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: scaleIn 0.3s ease;
+            overflow: hidden;
+        }
+        dialog[open] {
+            visibility: visible;
+        }
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .explore_head {
+            background-color:#2A4B33;
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            
+            border-radius: 15px 15px 0 0;
+        }
+        .dialog_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            min-height: 500px;
+        }
+
+        .explore_content {
+            width: 80%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+
+        .explore_video_banner {
+            width: 30%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .explore_img {
+            position: relative;
+            width: 500px;
+            height: 100%;
+        }
+        .explore_vid{
+            position: sticky;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .v_dis {
+            margin: 20px;
+            flex: 1;
+            text-align: center;
+            min-width: 250px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #414226;
+
+        }
+
+        .volunteer_table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px 0px;
+            
+            background-color: #d6d6cb;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .volunteer_table th, 
+        .volunteer_table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid ;
+            color: #414226;
+            
+        }
+
+        .volunteer_table tr:hover {
+            background-color: #aeaf99;
+        }
+        .volunteer_table th {
+            background-color: #2A4B33;
+            color: white;
+            font-weight: bold;
+            min-width: 150px;
+        }
+        .explore_buttons{
+            display: flex;
+            gap: 10px;
+            padding: 15px 25px;
+            justify-content: flex-end;
+        }
+
+        .close_button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(131, 77, 77, 0.473);
+            border-color: rgb(117, 56, 56);
+            color: rgb(117, 56, 56) ;
+        }
+
+
+        .review_content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            color: #35271D;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin-top: 100px;
+        }
+        #myReview, #review_head{
+            color:#7A6554 ;
+            font-weight: bold;
+        }
+        #review_head{
+            padding-bottom: 70px;
+        }
+        #name, #myReview {
+            padding-left: 50px;
+        }
+
+        textarea {
+            background-color: #C5C7C3;
+            border-radius: 10px;
+            width:300px;
+            height: 100px;
+            transition: border 0.3s ease;
+        }
+
+        textarea:focus {
+            border-color:#4b4d34;
+            outline: none;
+        }
+
+        .cancel_button {
+            padding: 10px 20px;
+            border: 2px solid #2A4B33;
+            border-radius: 30px;
+            background-color: white;
+            color: #2A4B33;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cancel_button:hover {
+            background-color:#506856;
+            color: white;
+        }
+
+        .send_button {
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            background-color: #2A4B33;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .send_button:hover {
+            background-color: #2A4B33;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(10, 54, 29, 0.4);
+        }
+
+
+        .seperator{
+            width: 5px;
+            height: 300px;
+            background-color: #C5C7C3;
+            margin: 0 20px;
+            border-radius: 2px;
+            display: inline-block;
+            flex-shrink: 0;
+            margin-left: 100px;
+        }
+        .my_rating{
+            padding-left: 100px;
+            display: flex;
+            
+        }
+        .my_rating img {
+            margin-top: 20px;
+        }
+        
+        .feedbacks{
+            padding-left: 100px;
+        }
+        .stars{
+            display: flex;
+            font-size: 40px;
+            cursor: pointer;
+            color:#C5C7C3;
+            
+        }
+        .stars span {
+            padding: 5px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .stars span:hover,
+        .stars span.active {
+            color: gold;
+            transform: scale(1.3);
+        }
+
+        .reviews_container , .hidden_reviews{
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 30px auto;
+            margin-right: 10px;
+            flex-wrap: wrap;
+        
+        }
+
+        .review_card {
+            flex: 1; /* Each column takes equal width */
+            min-width: 150px;
+            background: #ffffff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .review_card img , .my_rating img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;  
+            gap: 10px;  
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;  /* Align name and stars to the left */
+        }
+        .user-name {
+            font-weight: bold;
+            color: #35271D;
+            font-size: 18px;
+        }
+
+        .rating-stars {
+            font-size: 20px;
+        
+        }
+
+        .rating-stars span {
+            color: rgb(197, 197, 197);
+        }
+
+        /* Use nth-child to color based on rating */
+        .rating-stars[data-rating="5"] span:nth-child(-n+5) { color: gold; }
+        .rating-stars[data-rating="4"] span:nth-child(-n+4) { color: gold; }
+        .rating-stars[data-rating="3"] span:nth-child(-n+3) { color: gold; }
+        .rating-stars[data-rating="2"] span:nth-child(-n+2) { color: gold; }
+        .rating-stars[data-rating="1"] span:nth-child(-n+1) { color: gold; }
+
+        .ano_review{
+            color: #35271D;
+            font-size: 20px;
+        }
+        .review_separator {
+            width: 3px;
+            height: auto;
+            background-color: #C5C7C3;
+            border-radius: 3px;
+            margin: 0 15px;
+            align-self: stretch;
+        }
+        .hidden_reviews .review_separator {
+            display: block;
+        }
+        #rate_us {
+            font-size: 15px;
+            color: #7A6554;
+            justify-content: center;
+            align-items: center;
+            padding-left: 75px;
+            margin-top: -5px;
+        }
+        .anonymous{
+            width: 50px;
+            height: 50px;
+        }
+
+        .review_date {
+            color:#413f3f;
+        }
+        .see_more{
+            color: #7A6554;
+            text-align: right;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .see_more:hover {
+            color: #35271D;
+            text-decoration: underline;
+        }
+        .hidden_reviews {
+            display: none;
+            
+        }
+
+    </style>
+
+</head>
+<body>
+      
+    <div class="volunteer_page"  > <!--style="display: none;"    -->
+        <header class="top_header">
+            <div class="header">
+                <a href="./homepage.html">
+                    <img src="./images/logo(2).svg" alt="360 wellness logo" class="logo">
+                </a>
+                <a href="./user_profile.html">
+                    <img src="./images/profile_icon.svg" alt="user profile icon" class="profile_icon">
+                </a>
+            </div>
+        </header>
+        <div class="navbar">
+            <nav id="navbar">
+                <ul >
+                    <li><a href="./homepage.html"> Home</a></li>
+                    <li><a href="./volunteer_page.html"> Join Us</a></li>
+                    <li><a href="./table.html">Projects</a></li>
+                    <li><a href="./feedback.html">Feedback</a></li>
+                    <li><a href="./sitemap.html">Site Map</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">More</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Team.html">Our Team</a></li>
+                            <li><a href="./content.html">Contents</a></li>
+                            <li><a href="./validation_ST01.html">Validation Page</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h2 id="volunteer_heading">Be the change: Volunteer for a healthier world </h2>
+            <div class="volunteer_dropdown">
+                <select id="selectCountry" onchange="selectCountry()">
+                    <option value="all">Select Your Country</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+
+                </select>
+            </div>
+        
+            <div class="volunteer" data-country="India" id="blood_d">
+                <h3 class="v_head">Be the Lifeline: Volunteer for Blood Donation Today!</h3>
+                
+                
+                <div class="v_content" >         
+                    <img src="./images/blood_d.png" alt="health awareness" class="v_img">
+                    <div class="info">
+                        <div class="info_item">
+                            <img src="./images/Vector.png" alt="date">
+                            <span>31/ 05/ 2006</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/time.png" alt="time" >
+                            <span>3-5 hours volunteering per day</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/profile.png" alt="individual">
+                            <span>Volunteers aged 18+ </span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/cost.png" alt="fee">
+                            <span>Program  Fee: Rs.1000.00</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/hourglass.png" alt="duration">
+                            <span>Duration: 2 weeks</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="explore_button" onclick="document.getElementById('explore_v1').showModal();">Explore</button>
+                            <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <dialog id="explore_v1">
+                <h2 class="explore_head">Be the Lifeline: Volunteer for Blood Donation Today!</h2>
+                <div class="dialog_container">
+                    <div class="explore_video_banner">
+                        <video class="explore_vid" autoplay loop muted playsinline>
+                            <source src="./video/8490426-hd_1080_1920_25fps.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="explore_content">
+                            <p class="v_dis">
+                                Be a hero in your community by volunteering for our Blood Donation Program. 
+                                Help organize drives, encourage donations, and raise awareness about the life-saving impact of blood donations.
+                                Your time can make a difference in saving lives!  
+                            </p>
+                            <table class="volunteer_table">
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>Youth Association</td>
+                                </tr>
+                                <tr>
+                                    <th>Volunteer Role</th>
+                                    <td>
+                                        <ul class="role_list">
+                                            <li>Registration & Check-in</li>
+                                            <li>Assisting donors</li>
+                                            <li>Awareness & promotion</li>
+                                            <li>Logistics & setup</li>
+                                            <li>Medical support (for healthcare professionals only)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Start & End Date</th>
+                                    <td>15/ 09/ 2025 - 18/ 09/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Application Deadline</th>
+                                    <td>01/ 09/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Details</th>
+                                    <td>+94 123456789</td>
+                                </tr>
+                            </table>
+                        
+                    </div>
+                </div>
+                <div class="explore_buttons">
+                    <button class="close_button" id="close_explore">Close</button>
+                    <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                </div>
+            </dialog>
+
+
+            <div class="volunteer" data-country="India" id="health">
+                <h3 class="v_head">Be a part of the  journey  to Self  Awareness and Well Being.</h3>
+                <div class="v_content">
+
+                    <img src="./images/v2.png" alt="health awareness" class="v_img">
+                    <div class="info">
+                        <div class="info_item">
+                            <img src="./images/Vector.png" alt="date">
+                            <span>15/ 09/ 2025</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/time.png" alt="time" >
+                            <span>3-5 hours volunteering per day</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/profile.png" alt="individual">
+                            <span>Volunteers aged 18+ </span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/cost.png" alt="fee">
+                            <span>Program  Fee: Rs.500.00</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/hourglass.png" alt="duration">
+                            <span>Duration: 3 days</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="explore_button" onclick="document.getElementById('explore_v2').showModal();">Explore</button>
+                            <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <dialog id="explore_v2">
+                <h2 class="explore_head">Be a part of the  journey  to Self  Awareness and Well Being.</h2>
+                <div class="dialog_container">
+                    <div class="explore_video_banner">
+                        <video class="explore_vid" autoplay loop muted playsinline>
+                            <source src="./video/health_vid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="explore_content">
+                            <p class="v_dis">
+                                Join our Health Awareness Volunteer Program and make a difference in your community! 
+                                Help spread essential health knowledge, promote healthy lifestyles, and support individuals in making informed decisions about their well-being.
+                                Be part of a movement that empowers people with the tools they need to lead healthier, happier lives.   
+                            </p>
+                            <table class="volunteer_table">
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>Community Health Advocates</td>
+                                </tr>
+                                <tr>
+                                    <th>Volunteer Role</th>
+                                    <td>
+                                        <ul class="role_list">
+                                            <li>Event Coordinator/Logistics Volunteer</li>
+                                            <li>Registration & Check-in Volunteer </li>
+                                            <li>Awareness & Outreach Volunteer</li>
+                                            <li>Support & Assistance Volunteer</li>
+                                            <li>Setup & Cleanup Crew</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Start & End Date</th>
+                                    <td>15/ 09/ 2025 - 18/ 09/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Application Deadline</th>
+                                    <td>01/ 09/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Details</th>
+                                    <td>+94 123456789</td>
+                                </tr>
+                            </table>
+                        
+                    </div>
+                </div>
+                <div class="explore_buttons">
+                    <button class="close_button" onclick="document.getElementById('explore_v2').close();">Close</button>
+                    <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                </div>
+            </dialog>
+
+            
+
+            <div class="volunteer" data-country="Sri Lanka"  id="fitness">
+                <h3 class="v_head">Stronger Together: Inspire, Support, Transform</h3>
+                <div class="v_content">
+
+                    <img src="./images/fitness.png" alt="fitness session" class="v_img">
+                    <div class="info">
+                        <div class="info_item">
+                            <img src="./images/Vector.png" alt="date">
+                            <span>02/ 10/ 2025</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/time.png" alt="time" >
+                            <span>2-3 hours volunteering per day</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/profile.png" alt="individual">
+                            <span>Volunteers aged 16+ </span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/cost.png" alt="fee">
+                            <span>Program  Fee: Rs.1500.00</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/hourglass.png" alt="duration">
+                            <span>1 month (2 days per week)</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="explore_button" onclick="document.getElementById('explore_v3').showModal();">Explore</button>
+                            <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <dialog id="explore_v3">
+                <h2 class="explore_head">Stronger Together: Inspire, Support, Transform</h2>
+                <div class="dialog_container">
+                    <div class="explore_video_banner">
+                        <video class="explore_vid" autoplay loop muted playsinline>
+                            <source src="./video/fitness_vid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="explore_content">
+                            <p class="v_dis">
+                                Join our Fitness Awareness Volunteer Program and impact your community! Promote fitness, encourage active lifestyles, and support informed health decisions. Help others adopt healthier habits and lead more energetic, fulfilling lives.
+
+                            </p>
+                            <table class="volunteer_table">
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>Community Health Advocates</td>
+                                </tr>
+                                <tr>
+                                    <th>Volunteer Role</th>
+                                    <td>
+                                        <ul class="role_list">
+                                            <li>Event Coordinator/Logistics Volunteer</li>
+                                            <li>Registration & Check-in Volunteer </li>
+                                            <li>Awareness & Outreach Volunteer</li>
+                                            <li>Support & Assistance Volunteer</li>
+                                            <li>Setup & Cleanup Crew</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Start & End Date</th>
+                                    <td>02/ 10/ 2025 - 02/ 11/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Available days</th>
+                                    <td>
+                                        <ul>
+                                            <li>Wednesday 6.30am - 8.30am</li>
+                                            <li>Saturday  6.30am - 8.30am</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Application Deadline</th>
+                                    <td>25/ 09/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Details</th>
+                                    <td>+94 123456789</td>
+                                </tr>
+                            </table>
+                        
+                    </div>
+                </div>
+                <div class="explore_buttons">
+                    <button class="close_button" onclick="document.getElementById('explore_v3').close();">Close</button>
+                    <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                </div>
+            </dialog>
+
+            <div class="volunteer" data-country="Sri Lanka"  id="mental">
+                <h3 class="v_head">Take care of your mind, and it will take care of you.</h3>
+                <div class="v_content">
+
+                    <img src="./images/mental_health.png" alt="mental_hea" class="v_img">
+                    <div class="info">
+                        <div class="info_item">
+                            <img src="./images/Vector.png" alt="date">
+                            <span>12/ 03/ 2025</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/time.png" alt="time" >
+                            <span>1-2 hours volunteering per day</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/profile.png" alt="individual">
+                            <span>Volunteers aged 16+ </span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/cost.png" alt="fee">
+                            <span>Program  Fee: Rs.500.00</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/hourglass.png" alt="duration">
+                            <span>1 month (2 days per week)</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="explore_button" onclick="document.getElementById('explore_v4').showModal();">Explore</button>
+                            <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <dialog id="explore_v4" >
+                <h2 class="explore_head">Take care of your mind, and it will take care of you.</h2>
+                <div class="dialog_container">
+                    <div class="explore_video_banner">
+                        <video class="explore_vid" autoplay loop muted playsinline>
+                            <source src="./video/meditate_vid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="explore_content">
+                            <p class="v_dis">
+                                Join our Mental Well-being Volunteer Program and impact your community! Promote mental health, encourage self-care practices, and support informed well-being choices. Help others adopt positive habits and lead more balanced, fulfilling lives.       
+                            </p>
+                            <table class="volunteer_table">
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>Community Health Advocates</td>
+                                </tr>
+                                <tr>
+                                    <th>Volunteer Role</th>
+                                    <td>
+                                        <ul class="role_list">
+                                            <li>Event Coordinator/Logistics Volunteer</li>
+                                            <li>Registration & Check-in Volunteer </li>
+                                            <li>Awareness & Outreach Volunteer</li>
+                                            <li>Support & Assistance Volunteer</li>
+                                            <li>Setup & Cleanup Crew</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Start & End Date</th>
+                                    <td>12/ 03/ 2025 - 02/ 11/ 2025 </td>
+                                </tr>
+                                <tr>
+                                    <th>Available days</th>
+                                    <td>
+                                        <ul>
+                                            <li>Monday 6.30am - 8.30am</li>
+                                            <li>Thursday  6.30am - 8.30am</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Application Deadline</th>
+                                    <td>28/ 08/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Details</th>
+                                    <td>+94 123456789</td>
+                                </tr>
+                            </table>
+                        
+                    </div>
+                </div>
+                <div class="explore_buttons">
+                    <button class="close_button" onclick="document.getElementById('explore_v4').close();">Close</button>
+                    <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                </div>
+            </dialog>
+
+
+
+
+
+
+            <div class="volunteer" data-country="Sri Lanka"  id="elder">
+                <h3 class="v_head">Embrace their wisdom, and they'll brighten your world.</h3>
+                <div class="v_content">
+
+                    <img src="./images/elderly-home-care_small.jpeg" alt="fitness session" class="v_img">
+                    <div class="info">
+                        <div class="info_item">
+                            <img src="./images/Vector.png" alt="date">
+                            <span>01/ 03/ 2025</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/time.png" alt="time" >
+                            <span>3-4 hours volunteering per day</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/profile.png" alt="individual">
+                            <span>Volunteers aged 18+ </span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/cost.png" alt="fee">
+                            <span>Program  Fee: Rs.500.00</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/hourglass.png" alt="duration">
+                            <span>1 month (1 day per week)</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="explore_button" onclick="document.getElementById('explore_v5').showModal();">Explore</button>
+                            <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <dialog id="explore_v5">
+                <h2 class="explore_head">Embrace their wisdom, and they'll brighten your world.</h2>
+                <div class="dialog_container">
+                    <div class="explore_video_banner">
+                        <video class="explore_vid" autoplay loop muted playsinline>
+                            <source src="./video/elder-care_vid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="explore_content">
+                            <p class="v_dis">
+                                Join our Elderly Care Volunteer Program and make a difference in the lives of seniors! Provide companionship, assist with daily activities, and promote healthy aging practices. Help enhance the quality of life for older adults, ensuring they feel valued, supported, and connected to their communities.
+                            </p>
+                            <table class="volunteer_table">
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>ElderCare Support Foundation</td>
+                                </tr>
+                                <tr>
+                                    <th>Volunteer Role</th>
+                                    <td>
+                                        <ul class="role_list">
+                                            <li>Companion Volunteer</li>
+                                            <li>Healthcare Assistance Volunteer</li>
+                                            <li>Activity Coordinator Volunteer</li>
+                                            <li>Transportation & Mobility Assistance</li>
+                                            <li>Well-being Support Volunteer</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Start & End Date</th>
+                                    <td>12/ 03/ 2025 - 02/ 11/ 2025 </td>
+                                </tr>
+                                <tr>
+                                    <th>Available days</th>
+                                    <td >Wednesday 9.00am - 12.00pm</td>
+                                </tr>
+                                <tr>
+                                    <th>Application Deadline</th>
+                                    <td>28/ 02/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Details</th>
+                                    <td>+94 987654321</td>
+                                </tr>
+                            </table>
+                        
+                    </div>
+                </div>
+                <div class="explore_buttons">
+                    <button class="close_button" onclick="document.getElementById('explore_v5').close();">Close</button>
+                    <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                </div>
+            </dialog>
+
+            <div class="volunteer" data-country="Sri Lanka"  id="children_wellness">
+                <h3 class="v_head">Nurture their well-being, and they'll flourish with joy.</h3>
+                <div class="v_content">
+
+                    <img src="./images/children_wellness.jpg" alt="fitness session" class="v_img">
+                    <div class="info">
+                        <div class="info_item">
+                            <img src="./images/Vector.png" alt="date">
+                            <span>05/ 04/ 2025</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/time.png" alt="time" >
+                            <span>2-3 hours volunteering per day</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/profile.png" alt="individual">
+                            <span>Volunteers aged 16+ </span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/cost.png" alt="fee">
+                            <span>Free participation</span>
+                        </div>
+                        <div class="info_item">
+                            <img src="./images/hourglass.png" alt="duration">
+                            <span>3 months (1-2 days per week)</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="explore_button" onclick="document.getElementById('explore_v6').showModal();">Explore</button>
+                            <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <dialog id="explore_v6">
+                <h2 class="explore_head">Nurture their well-being, and they'll flourish with joy.</h2>
+                <div class="dialog_container">
+                    <div class="explore_video_banner">
+                        <video class="explore_vid" autoplay loop muted playsinline>
+                            <source src="./video/children_vid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="explore_content">
+                            <p class="v_dis">
+                                Join our Children’s Wellness Volunteer Program and support the well-being of young minds! Help promote healthy habits, engage children in fun and educational activities, and create a nurturing environment for their growth. Make a lasting impact by encouraging resilience, confidence, and happiness in their lives.                            </p>
+                            <table class="volunteer_table">
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>Children’s Wellness Foundation</td>
+                                </tr>
+                                <tr>
+                                    <th>Volunteer Role</th>
+                                    <td>
+                                        <ul class="role_list">
+                                            <li>Child Engagement Volunteer</li>
+                                            <li>Health & Nutrition Support Volunteer</li>
+                                            <li>Educational Activities Coordinator</li>
+                                            <li>Sports & Fitness Mentor</li>
+                                            <li>Emotional Well-being Support Volunteer</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Start & End Date</th>
+                                    <td>15/ 03/ 2025 - 10/ 11/ 2025 </td>
+                                </tr>
+                                <tr>
+                                    <th>Available days</th>
+                                    <td >Saturday 10.00am - 1.00pm</td>
+                                </tr>
+                                <tr>
+                                    <th>Application Deadline</th>
+                                    <td>05/ 03/ 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact Details</th>
+                                    <td>+94 987654321</td>
+                                </tr>
+                            </table>
+                        
+                    </div>
+                </div>
+                <div class="explore_buttons">
+                    <button class="close_button" onclick="document.getElementById('explore_v6').close();">Close</button>
+                    <a href="https://forms.gle/wJfBFEdyp3nAUBpj6" target="_blank" class="apply_button">Apply</a>
+
+                </div>
+            </dialog>
+
+            <div class="review_content">
+                <div class="ratings">
+                    <p style="font-size: 30px;" id="review_head">Ratings & Reviews</p>
+                    <div class="rating-summary">
+                        <p style="font-size: 60px; margin: 0;">9.5/10</p> <!-- Overall rating -->
+                        <p style="font-size: 24px; margin: 5px 0;">Excellent</p> <!-- Subtitle based on rating -->
+                        <p style="font-size: 20px; margin: 0;">Total Reviews: 150</p> <!-- Total reviews -->
+                    </div>
+                </div>
+
+                <div class="seperator"></div>
+                <div class="my_rating">
+                    <img src="./images/gg_profile.png" alt="profile picture" class="profile_pic">
+                    <div>
+                        <p style="font-size: 20px;" id="myReview">My Review</p>
+                        <div class="stars" id="stars">
+                            <span data-value="1">&#9733;</span>
+                            <span data-value="2">&#9733;</span>
+                            <span data-value="3">&#9733;</span>
+                            <span data-value="4">&#9733;</span>
+                            <span data-value="5">&#9733;</span>
+                        </div>
+                        <p id="rate_us">Rate Us</p>
+                        <p style="font-size: 25px ; padding-left: 70px;"><b>Anne</b></p>
+                    </div>
+                </div>
+
+                <div class="feedbacks">
+                    <p style="font-size: 20px;"><b>Send your feedback</b></p>
+                    <textarea id="feedbackText"></textarea>
+                    <div class="fb_buttons">
+                        <button class="cancel_button" id="cancel_button">Cancel</button>
+                         <button class="send_button" id="send_feedback">Send</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="reviews_container">
+
+                <div class="review_card">
+                    <div class="user-info">
+                        <img src="./images/gg_profile.png" alt="User profile"  class="anonymous">
+                        <div class="user-details">
+                            <p class="user-name">John Doe</p> <!-- User Name -->
+                            <div class="rating-stars" data-rating="3"> 
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span> <!-- Default: All stars -->
+                            </div>
+                        </div>
+                    </div>
+                    <p class="ano_review">
+                        Volunteering at 360 Wellness’ blood donation program was rewarding. Well-organized, safe, and impactful—an inspiring event that truly saves lives!
+                    </p>
+                    <p class="review_date">10/ 09/ 2024</p>
+                </div>
+
+                <div class="review_separator"></div>
+            
+                <div class="review_card">
+                    <div class="user-info">
+                        <img src="./images/gg_profile.png" alt="User profile"  class="anonymous">
+                        <div class="user-details">
+                            <p class="user-name">Katniss Everdene</p> <!-- User Name -->
+                            <div class="rating-stars" data-rating="4"> 
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span> <!-- Default: All stars -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <p class="ano_review">
+                        360 Wellness’ fitness program was energizing and well-structured. Great trainers, effective workouts, and a motivating environment—perfect for all fitness levels!
+                    </p>
+                    <p class="review_date">20/ 12/ 2024</p>
+                </div>
+
+                <div class="review_separator"></div>
+            
+                <div class="review_card">
+                    <div class="user-info">
+                        <img src="./images/gg_profile.png" alt="User profile"  class="anonymous">
+                        <div class="user-details">
+                            <p class="user-name">Alex Johnson</p> <!-- User Name -->
+                            <div class="rating-stars" data-rating="5"> 
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span> <!-- Default: All stars -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <p class="ano_review">
+                        The 360 Wellness nutrition program was insightful and practical. Expert guidance, personalized plans, and sustainable habits for a healthier lifestyle!
+                    </p>
+                    <p class="review_date">25/ 12/ 2024</p>
+                </div>
+                
+            </div>
+            <div class="hidden_reviews">
+             
+
+                <div class="review_card">
+                    <div class="user-info">
+                        <img src="./images/gg_profile.png" alt="User profile"  class="anonymous">
+                        <div class="user-details">
+                            <p class="user-name">Tris Prior</p> <!-- User Name -->
+                            <div class="rating-stars" data-rating="4"> 
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span> <!-- Default: All stars -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <p class="ano_review">
+                        Great wellness retreat experience. 🙌                  </p>
+                    <p class="review_date">25/ 12/ 2024</p>
+                </div>
+
+                <div class="review_separator"></div>
+
+                <div class="review_card">
+                    <div class="user-info">
+                        <img src="./images/gg_profile.png" alt="User profile"  class="anonymous">
+                        <div class="user-details">
+                            <p class="user-name">Mevin Paul Pradeep</p> <!-- User Name -->
+                            <div class="rating-stars" data-rating="3"> 
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span> <!-- Default: All stars -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <p class="ano_review">
+                        Great health awareness program! Learnt a lot of tips to make my life more healthier.                 
+                    </p>
+                    <p class="review_date">28/ 02/ 2025</p>
+                </div>
+
+                <div class="review_separator"></div>
+                <div class="review_card">
+                    <div class="user-info">
+                        <img src="./images/gg_profile.png" alt="User profile"  class="anonymous">
+                        <div class="user-details">
+                            <p class="user-name">Aaron Warner</p> <!-- User Name -->
+                            <div class="rating-stars" data-rating="5"> 
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span> <!-- Default: All stars -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <p class="ano_review">
+                        The 360 Wellness nutrition program was insightful and practical. Expert guidance, personalized plans, and sustainable habits for a healthier lifestyle!
+                    </p>
+                    <p class="review_date">25/ 12/ 2024</p>
+                </div>
+            </div>
+            <p class="see_more" id="seeMoreBtn">See More</p>
+
+            <script>
+
+                //select country
+                function selectCountry () {
+                                var selectedCountry = document.getElementById("selectCountry").value;
+                                var programs = document.querySelectorAll(".volunteer")
+
+                                programs.forEach(function(program)  {
+                                    var programCountry = program.getAttribute("data-country");
+
+                                    if(selectedCountry ==="all" || programCountry ===selectedCountry)   {
+                                        program.style.display ="block"
+                                    } else{
+                                        program.style.display = "none";
+                                    }
+                                })
+                            }
+
+                //rating and feedback
+                const stars = document.querySelectorAll('.stars span');
+            
+                stars.forEach((star, index) => {
+                    star.addEventListener('click', () => {
+                        stars.forEach((s, i) => {
+                            s.classList.toggle('active', i <= index); // Apply "active" class to all previous stars
+                        });
+                    });
+                });
+
+                function sendFeedback() {
+                    let feedback = document.querySelector("textarea").value();
+                    let email = "nethmi.20231870@iit.ac.lk";
+                    let subject = "User Feedback";
+                    let mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(feedback)}`;
+
+                    window.location.href = mailtoLink;
+                }
+
+                //send feedback
+                document.getElementById('send_feedback').addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    alert('Thank you for your feedback! ❤️');
+                    document.getElementById('feedbackText').value = ''; // clear textarea
+                });
+
+                document.getElementById('cancel_button').addEventListener('click', function() {
+                    document.getElementById('feedbackText').value = ''; // clear textarea on cancel
+                });
+
+
+                //close explore
+                document.getElementById("close_explore").addEventListener("click", function() {
+                    console.log("Close button clicked!");
+                    document.getElementById("explore_v1").close();
+                    console.log("Close button is working!");
+                });
+                // cancel textarea
+                function clearFeedback() {
+                    document.getElementById("feedbackText").value = ""; // Clears the textarea
+                }
+
+                //see more 
+                document.getElementById("seeMoreBtn").addEventListener("click", function() {
+                var hiddenReviews = document.querySelector(".hidden_reviews");
+                if (hiddenReviews.style.display === "none" || hiddenReviews.style.display === "") {
+                    hiddenReviews.style.display = "flex"; // Use flex to maintain horizontal layout
+                    this.innerText = "See Less";
+                } else {
+                    hiddenReviews.style.display = "none";
+                    this.innerText = "See More";
+                }
+            });
+            </script>
+            
+            
+        </div>
+    </div>
+    <footer>
+        <div>
+            <img src="./images/footer_logo.png" alt="footer logo">
+            <div class="Editor">
+                <a href="./pageEditor_ST01.html#volunteer">Page Editor: Nethmi Athukorala</a>
+            </div>
+            
+        </div>
+        <p>&copy; 2025 360 Wellness. All rights reserved.</p>
+    </footer>
+    
+    </body>
+</html>
